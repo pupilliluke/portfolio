@@ -9,6 +9,7 @@ const projects = [
         link: "https://youtu.be/Uhk2b_zTPXI"
     },
     {
+        
         title: "Flash Stats Website",
         date: "December 4, 2024",
         description: "A browser extension designed to assist users in solving LeetCode problems by providing real-time information and tools.",
@@ -106,6 +107,15 @@ const projects = [
         type: "OS",
         image: "/images/projects/osImage.png",
         link: "n/a"
+    },
+    {
+        title: "Compiler CS410",
+        date: "December 15, 2023",
+        description: "A comprehensive compiler implementation built in Java, featuring complete lexical analysis, parsing, semantic analysis, and code generation phases for academic coursework.",
+        tags: ["Java", "Compiler Design", "Parser", "Lexical Analysis", "Code Generation"],
+        type: "WEBAPP",
+        image: "/images/projects/compiler.png",
+        link: "https://youtu.be/WqTmFLIZOLU"
     },
     {
         title: "Full Stack User Management System",

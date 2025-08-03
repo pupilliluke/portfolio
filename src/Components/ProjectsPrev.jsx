@@ -1,81 +1,134 @@
 import React from "react";
-import { motion } from "framer-motion";
 
-const projects = [
+const featuredProjects = [
   {
-    title: "Oliver Projections Website",
+    slug: "oliver-projections-website",
+    title: "Oliver Projections Website", 
     date: "May 31, 2025",
     description: "An encyclopedia for statistics and portal for expert analysis and projections covering all leagues and ages in the baseball world.",
     tags: ["Javascript", "Python", "SQL", "React", "HTML", "CSS"],
     type: "WEBAPP",
-    image: "/oliver.png",
+    image: "/images/projects/OP.png",
   },
   {
+    slug: "flash-stats-website",
     title: "Flash Stats Website",
-    date: "December 4, 2024",
+    date: "December 4, 2024", 
     description: "A browser extension designed to assist users in solving LeetCode problems by providing real-time information and tools.",
-    tags: ["Framer Motion", "React", "Typescript", "Tailwind"],
+    tags: ["React", "Typescript", "Tailwind", "Vercel", "Node.js"],
     type: "WEB",
-    image: "/leetbot.png",
+    image: "/images/projects/fs.png",
   },
   {
+    slug: "fusion-help-desk-ticketing-system",
     title: "Fusion Help Desk Ticketing System",
     date: "October 15, 2024",
     description: "A comprehensive ticketing system for managing customer support requests, integrating with various communication channels.",
-    tags: ["Python", "Django", "PostgreSQL", "HTML", "CSS"],
-    type: "WEBAPP",
-    image: "/fusion.png",
+    tags: ["Spring Boot", "Java", "Python", "Azure DB & Hosting", "HTML", "CSS"],
+    type: "WEBAPP", 
+    image: "/images/projects/HelpDeskImage.jpg",
   },
-
 ];
+
+const getTypeColor = (type) => {
+  const colors = {
+    'WEBAPP': 'from-blue-500 to-blue-600',
+    'WEB': 'from-green-500 to-green-600',
+    'MOBILEAPP': 'from-yellow-500 to-yellow-600',
+    'OS': 'from-red-500 to-red-600',
+    'Virtual Reality Unity3D App': 'from-purple-500 to-purple-600',
+    default: 'from-slate-500 to-slate-600'
+  };
+  return colors[type] || colors.default;
+};
 
 const Projects = () => {
   return (
-        <motion.section
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
->
     <section id="projects" className="max-w-7xl mx-auto px-6 py-20">
-      <h2 className="text-3xl font-bold text-white mb-6">Projects</h2>
-      <p className="text-gray-300 mb-10">
-        Here are some of the projects I've worked on, showcasing my skills in web development, problem-solving, and creativity.
-      </p>
+      <div className="text-center mb-16">
+        <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Featured</span> <span className="text-white">Projects</span>
+        </h2>
+        <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
+          Here are some of the projects I've worked on, showcasing my skills in{" "}
+          <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-medium">web development</span>, problem-solving, and creative thinking.
+        </p>
+      </div>
+
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
-<div
-  key={project.title}
-  className="bg-[#1e293b] rounded-xl overflow-hidden shadow-md hover:shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(255,115,0,0.4)]"
->
-            <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <span className="bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded">
-                {project.type}
-              </span>
-              <h3 className="text-white font-bold text-lg mt-2">{project.title}</h3>
-              <p className="text-gray-400 text-sm mb-2">{project.date}</p>
-              <p className="text-gray-300 text-sm mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="bg-gray-700 text-white text-xs px-2 py-1 rounded-full">
-                    {tag}
+        {featuredProjects.map((project, index) => (
+          <a key={project.slug} href={`/projects/${project.slug}`} className="group">
+            <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-105">
+              {/* Image section */}
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Type badge */}
+                <div className="absolute top-4 left-4">
+                  <span className={`inline-block bg-gradient-to-r ${getTypeColor(project.type)} text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg border border-white/20`}>
+                    {project.type}
                   </span>
-                ))}
+                </div>
+
+                {/* Hover arrow */}
+                <div className="absolute top-4 right-4 w-8 h-8 bg-white/10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Content section */}
+              <div className="p-6 relative">
+                <h3 className="text-white font-bold text-xl mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                  {project.title}
+                </h3>
+                
+                <p className="text-slate-400 text-sm mb-3 font-medium">{project.date}</p>
+                
+                <p className="text-slate-300 text-sm mb-4 leading-relaxed line-clamp-3 group-hover:text-slate-200 transition-colors duration-300">
+                  {project.description}
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 hover:text-white text-xs px-3 py-1.5 rounded-full border border-slate-600/30 hover:border-slate-500/50 transition-all duration-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Bottom gradient line */}
+                <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 w-0 group-hover:w-full transition-all duration-500"></div>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
-      <div className="mt-10 flex justify-center">
-       <a
-  href="/projects"
-  className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md text-sm inline-block transition"
->
-  More Projects
-</a>
+
+      <div className="mt-16 flex justify-center">
+        <a
+          href="/projects"
+          className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium px-8 py-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 text-lg"
+        >
+          <span className="flex items-center gap-2">
+            View All Projects
+            <span>→</span>
+          </span>
+        </a>
       </div>
     </section>
-        </motion.section>
   );
 };
 

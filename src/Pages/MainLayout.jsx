@@ -1,11 +1,15 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import ScrollProgress from "../Components/ScrollProgress";
 
 const MainLayout = ({ children }) => (
-  <div className="bg-[#0f172a] text-white bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px]">
+  <div className="relative min-h-screen bg-slate-900 text-white">
+    <ScrollProgress />
     <Navbar />
-    {children}
+    <main className="relative">
+      {children}
+    </main>
     <Footer />
   </div>
 );
