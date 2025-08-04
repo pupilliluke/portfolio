@@ -1,15 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import projects from "../Data/projects.js"; // adjust path as needed
+import data from "../Data/skillsData.js"; // adjust path as needed
 
-const baseSkills = {
-  Languages: ["Java", "HTML", "CSS", "JavaScript", "SQL", "Python"],
-  "Frontend Frameworks": ["React JS", "Next.js"],
-  "Styling Libraries": ["Bootstrap", "Tailwind CSS"],
-  "Backend Frameworks": ["Spring Boot", "ASP.NET Core"],
-  "Databases & CMS": ["MySQL", "SQLite", "Firebase"],
-  "Other Tools": ["Jira", "Atlassian", "Bitbucket", "VS Code", "Git", "GitHub", "Node.js"],
-};
 
 // Collect all tags from the projects array
 const projectTags = Array.from(
@@ -32,7 +25,8 @@ const Skills = () => {
 
       {/* Base skill categories */}
       <div className="space-y-6 mb-12">
-        {Object.entries(baseSkills).map(([category, items]) => (
+         {Object.entries(data).map(([category, { items, color, icon }]) => (
+
           <div key={category}>
             <h3 className="text-lg text-white font-semibold mb-2">{category}</h3>
             <div className="flex flex-wrap gap-2">

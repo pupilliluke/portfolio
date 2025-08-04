@@ -10,8 +10,8 @@ const Hero = () => {
           <span className="text-white">Pupilli</span>
         </h1>
         <p className="text-slate-300 mb-4">
-          <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-semibold">Full Stack Developer</span>{" "}
-          crafting exceptional digital experiences from{" "}
+          <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-semibold">Full Stack Software Engineer</span>{" "}
+          building scalable web applications and enterprise solutions from{" "}
           <span className="text-blue-400 font-medium">Pittsburgh, PA</span>
         </p>
         <div className="flex gap-4">

@@ -12,11 +12,11 @@ const About = () => {
       
       <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8 shadow-xl">
         <p className="text-slate-300 text-lg leading-relaxed text-center max-w-4xl mx-auto">
-          Hi, I'm <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-semibold">Luke Pupilli</span>! 
-          I'm a passionate developer with a love for turning ideas into digital experiences.
-          With a focus on <span className="text-blue-400 font-medium">clean code</span> and 
-          <span className="text-blue-400 font-medium"> creative solutions</span>, I enjoy building projects that solve real-world problems.
-          When I'm not coding, I'm working out, going on hikes, and watching sports.
+          I'm <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-semibold">Luke Pupilli</span>, a full-stack software engineer with 3+ years of experience building scalable web applications and enterprise solutions. 
+          I specialize in <span className="text-blue-400 font-medium">React.js, Node.js, and cloud technologies</span>, with expertise in 
+          <span className="text-blue-400 font-medium"> database design, API development, and DevOps practices</span>. 
+          My passion lies in creating efficient, maintainable code that drives business value and delivers exceptional user experiences. 
+          I thrive in collaborative environments and enjoy solving complex technical challenges.
         </p>
       </div>
     </section>

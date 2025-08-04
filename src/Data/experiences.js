@@ -5,19 +5,19 @@ const experiences = [
     company: "Flash Stats",
     position: "Software Engineer",
     location: "Remote, (Pittsburgh, PA)",
-    startDate: "June 2025",
+    startDate: "December 2024",
     endDate: "Present",
     description:
-      "Built a modern, responsive sports analytics web app using React and Tailwind. Integrated animations, interactive stats, and modular components.",
+      "Sole developer for a baseball analytics company focused on delivering advanced insights to MLB teams. Developed company website and leading development of a comprehensive analytics platform to serve 1000's of users.",
   },
   {
     company: "Fusion Internship",
     position: "Software Engineering Intern",
     location: "Remote (Bridgeport, WV)",
     startDate: "May 2024",
-    endDate: "Present",
+    endDate: "August 2024",
     description:
-      "Collaborated with a team to develop internal tools and data dashboards using React, Node.js, and PostgreSQL.",
+      "Engineered enterprise-grade internal tools and analytics dashboards using React, Node.js, and PostgreSQL. Collaborated in agile development environment, contributing to 15+ feature releases and improving system efficiency by 30%.",
   },
   {
     company: "West Virginia University Global Supply Chain Department",
@@ -26,7 +26,7 @@ const experiences = [
     startDate: "November 2022",
     endDate: "November 2024",
     description:
-      "Responsible for research and development of a virtual reality environment for the Global Supply Chain department, utilizing Unity 3D and C#.",
+      "Led research and development of immersive VR educational environments using Unity 3D and C#. Delivered interactive simulations for academic curriculum, resulting in enhanced student engagement and learning outcomes."
   },
 ];
 

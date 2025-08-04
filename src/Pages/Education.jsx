@@ -26,7 +26,7 @@ const Education = () => {
       <p className="text-gray-400 text-sm mb-8">August 2021 – May 2025 • Morgantown, WV</p>
 
       <p className="text-gray-300 text-md leading-relaxed mb-10 max-w-3xl">
-        At WVU, I developed a strong foundation in full-stack software development, systems thinking, and collaborative engineering. From advanced algorithms to responsive UI design, my academic experience prepared me to build elegant, scalable web applications with real-world impact.
+        Comprehensive computer science education with focus on software engineering principles, data structures, algorithms, and system design. Gained hands-on experience in full-stack development, database management, and cloud technologies through project-based learning and industry collaboration.
       </p>
 
       {/* Relevant Coursework */}
