@@ -110,7 +110,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Navigation Links */}
-            <nav className="flex-1 px-6 py-8 overflow-y-auto">
+            <nav className="flex-1 px-6 py-8 overflow-y-auto scrollbar-hide">
               <ul className="space-y-4">
                 {[
                   { label: "Home", href: "/", icon: HiHome },

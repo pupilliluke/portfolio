@@ -47,4 +47,13 @@
   .input-modern {
     @apply bg-slate-custom-800/50 border border-slate-custom-600/50 rounded-lg px-4 py-3 text-white placeholder-slate-custom-400 focus:outline-none focus:ring-2 focus:ring-google-blue-500/50 focus:border-google-blue-500/50 transition-all duration-300;
   }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
 }
