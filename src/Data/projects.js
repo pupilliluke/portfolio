@@ -15,7 +15,7 @@ const projects = [
         description: "A frontend platform providing information about Flash-Stats Co. Flash-Stats serves real-time statistics, interactive data visualizations, advanced analytics, and expert driven projections to the MLB. Built with modern web technologies to deliver seamless user experience across devices.",
         tags: ["React", "Typescript", "Tailwind", "Vercel", "Node.js", "Tailwind CSS"],
         type: "WEB",
-        image: "/images/projects/FS.png",
+        image: "/images/projects/fs.png",
         link: "https://flashstats.vercel.app/"
     },
     {
@@ -33,7 +33,7 @@ const projects = [
         description: "Front-end platform for a client's small business. Features product listings, instagram integration, and responsive design. ",
         tags: ["React", "Node.js", "Vercel", "Tailwind CSS"],
         type: "WEB",
-        image: "/images/projects/PS.png",
+        image: "/images/projects/ps.png",
         link: "https://plntdsips.com",
     },
     {
@@ -69,7 +69,7 @@ const projects = [
         description: "Research platform for algorithm development featuring containerized deployment, database optimization, and modern frontend architecture. Built with enterprise-grade security and scalability considerations.",
         tags: ["C#", ".NET", "Docker", "Vite", "MySQL"],
         type: "WEBAPP",
-        image: "/images/projects/PICARD.png",
+        image: "/images/projects/picard.png",
         link: "unauthorized"
     },
     // {

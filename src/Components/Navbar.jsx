@@ -96,9 +96,9 @@ const Navbar = () => {
         
         {/* Mobile Menu Panel */}
         <div className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-slate-800/95 backdrop-blur-md border-l border-slate-700/50 shadow-2xl transform transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full overflow-hidden">
             {/* Mobile Menu Header */}
-            <div className="flex items-center justify-between p-6 border-b border-slate-700/50">
+            <div className="flex items-center justify-between p-6 border-b border-slate-700/50 flex-shrink-0">
               <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent font-bold text-xl">Luke Pupilli</span>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -110,7 +110,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Navigation Links */}
-            <nav className="flex-1 px-6 py-8">
+            <nav className="flex-1 px-6 py-8 overflow-y-auto">
               <ul className="space-y-4">
                 {[
                   { label: "Home", href: "/", icon: HiHome },
@@ -139,7 +139,7 @@ const Navbar = () => {
             </nav>
 
             {/* Mobile Social Links */}
-            <div className="px-6 pb-8 border-t border-slate-700/50 pt-6">
+            <div className="px-6 pb-8 border-t border-slate-700/50 pt-6 flex-shrink-0">
               <p className="text-slate-400 text-sm mb-4 font-medium">Connect with me</p>
               <div className="grid grid-cols-2 gap-3">
                 {[
