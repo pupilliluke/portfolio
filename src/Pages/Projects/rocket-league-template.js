@@ -1,29 +1,27 @@
 // Rocket League Management System Project Template Data
 export const rocketLeagueTemplate = {
-  overview: "A comprehensive sports league management system built with React, designed specifically for managing Rocket League tournaments and competitive leagues. The platform handles team registration, match scheduling, tournament brackets, player statistics, and league administration. Features include real-time score updates, automated bracket generation, and comprehensive tournament analytics.",
+  overview: "A comprehensive sports league management system built with React, designed specifically for managing Rocket League tournaments and competitive leagues. The platform handles league statistics, match scheduling, tournament brackets, player statistics, and league administration. Features include real-time score updates, automated bracket generation, and comprehensive tournament analytics.",
   
   keyFeatures: [
-    "Tournament Management - Complete tournament lifecycle from registration to finals with automated bracket generation and match scheduling",
     "Team & Player Management - Comprehensive roster management, player statistics tracking, and team performance analytics",
-    "Real-time Match Updates - Live score tracking, match results, and instant bracket updates with responsive design",
+    "Match Updates - Score tracking, match results, and bracket updates with responsive design",
     "Administrative Dashboard - Full league administration tools for organizers including user management and tournament configuration"
   ],
   
   challenges: [
     "Complex Tournament Logic - Implementing flexible tournament bracket systems supporting single/double elimination and round-robin formats",
     "Real-time Data Synchronization - Ensuring consistent match updates and bracket changes across all connected users",
-    "Scalable Architecture - Designing system to handle multiple concurrent tournaments with varying participant counts"
+    "Scalable Architecture - Designing system to handle multiple tournaments with varying participant counts"
   ],
   
   solutions: [
-    "Developed modular tournament engine with configurable bracket algorithms and automated progression logic",
-    "Implemented WebSocket connections for real-time updates with fallback to REST API polling for compatibility",
-    "Created scalable component architecture with efficient state management and optimistic UI updates"
+    "Developed a modular tournament engine with customizable rules and formats, supporting dynamic bracket generation",
+    "Utilized React's component-based architecture for scalable UI, allowing easy addition of new features and tournament types"
   ],
   
   technicalDetails: {
-    architecture: "React single-page application with component-based architecture, Redux for state management, and modular tournament engine",
-    database: "RESTful API integration with JSON data persistence and local storage for offline functionality",
+    architecture: "React application with component-based architecture, Redux for state management, and modular tournament engine",
+    database: "RESTful API integration with JSON data persistence and remote storage enabling persistence of match results and player statistics",
     deployment: "Static site deployment with CDN optimization and responsive design for mobile and desktop platforms",
     testing: "React Testing Library for component testing and Jest for unit testing of tournament logic algorithms"
   },
@@ -41,9 +39,9 @@ export const rocketLeagueTemplate = {
   ],
   
   metrics: {
-    duration: "4 months",
+    duration: "1 month",
     teamSize: "Solo project with community input",
-    linesOfCode: "~10,000 lines",
+    linesOfCode: "~5,000 lines",
     userBase: "Rocket League tournament organizers and players"
   }
 };

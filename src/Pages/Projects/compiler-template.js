@@ -11,13 +11,11 @@ export const compilerTemplate = {
   
   challenges: [
     "Complex Grammar Implementation - Designing and implementing a complete grammar specification with proper precedence rules and associativity handling",
-    "Error Recovery Mechanisms - Developing sophisticated error detection and recovery strategies to provide meaningful compiler diagnostics",
     "Memory Management - Implementing efficient data structures for symbol tables, AST nodes, and intermediate representations without memory leaks"
   ],
   
   solutions: [
     "Implemented recursive descent parser with systematic grammar rules and comprehensive error production handling for robust parsing",
-    "Developed multi-phase error reporting system with precise source location tracking and meaningful diagnostic messages",
     "Utilized Java's memory management while implementing custom data structures optimized for compiler performance and memory efficiency"
   ],
   
@@ -43,7 +41,7 @@ export const compilerTemplate = {
   metrics: {
     duration: "4 months (Full Semester)",
     teamSize: "Team academic project",
-    linesOfCode: "~8,000 lines",
+    linesOfCode: "~2,300 lines",
     userBase: "Academic evaluation and peer review"
   }
 };

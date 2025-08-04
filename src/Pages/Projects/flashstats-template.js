@@ -3,47 +3,46 @@ export const flashstatsTemplate = {
   overview: "FlashStats is a comprehensive baseball analytics platform designed to provide advanced data analytics, scouting insights, and performance tracking for Major League Baseball, collegiate, and amateur league teams. The platform features the flagship BRAIN (Baseball Research And Interactive Nexus) tool, which delivers immersive analytics and precision scouting data to elite teams and organizations.",
   
   keyFeatures: [
-    "Advanced Baseball Analytics Dashboard - Real-time player statistics, performance metrics, and comparative analysis across leagues",
-    "BRAIN Tool Integration - Interactive analytics platform for scouting insights and performance tracking with video integration",
-    "Multi-League Support - Comprehensive data coverage for MLB, collegiate, and amateur leagues with customizable filters",
-    "Interactive Data Visualization - Dynamic charts, graphs, and player comparison tools with responsive design"
+    "Data Visualization Demonstration- Dynamic charts, graphs, and player comparison tools with responsive design",
+    "Advanced Analytics Marketing - Showcasing the BRAIN tool's capabilities with embedded video demos and data samples.",
   ],
   
   challenges: [
-    "Complex Data Integration - Managing and synchronizing real-time baseball statistics from multiple league sources",
-    "Performance Optimization - Handling large datasets while maintaining responsive user experience across devices",
-    "Video Integration - Implementing seamless integration with Baseball Savant video links and YouTube content"
+    "Search Engine Optimization - Implementing effective SEO strategies to enhance visibility and reach within the baseball analytics community",
+    "Real-time Data Integration - Ensuring seamless integration with current baseball statistics productsand analytics data sources",
+    "Video Integration - Implementing seamless integration with multiple video sources for showcasing analytics and company performance",
   ],
   
   solutions: [
-    "Implemented robust data pipeline architecture with real-time synchronization and caching strategies",
-    "Utilized React's optimization techniques including lazy loading and efficient state management for large datasets",
+    "Developed comprehensive SEO strategy with targeted keywords, metadata optimization, and content marketing",
+    "Utilized React's modern component architecture for efficient rendering and state management",
     "Created modular video integration system with iframe embedding and custom player controls"
   ],
   
   technicalDetails: {
     architecture: "Modern React application with component-based architecture, utilizing React Bootstrap for responsive design and Tailwind CSS for custom styling",
-    database: "Real-time baseball statistics integration with external APIs and local data caching for performance optimization",
-    deployment: "Built for web deployment with Create React App build optimization and static asset management",
-    testing: "Comprehensive testing suite using React Testing Library and Jest for component and integration testing"
+    database: "No database integration required for static content",
+    deployment: "Built for web deployment with Vercel for hosting and CI/CD integration",
+    testing: "Small user testing with focus on usability and performance feedback"
   },
   
   learnings: [
-    "Advanced React Development - Mastered complex state management for real-time sports data and interactive dashboards",
-    "Sports Analytics - Gained deep understanding of baseball statistics, metrics, and data visualization best practices",
-    "Performance Optimization - Learned techniques for handling large datasets and maintaining smooth user experience"
+    "React Component Design - Mastery of React's component-based architecture and state management",
+    "SEO Best Practices - Implementation of effective SEO strategies for web applications",
+    "Responsive Design - Experience with responsive design principles using React Bootstrap and Tailwind CSS"
   ],
   
   futureImprovements: [
-    "Real-time Data Streaming - Implement WebSocket connections for live game updates and statistics",
-    "Mobile Application - Develop native mobile app for iOS and Android platforms",
-    "Advanced Analytics - Add machine learning models for player performance predictions and trend analysis"
+    "Advanced Analytics - Add machine learning models for player performance predictions and trend analysis",
+    "Scalable Backend - Develop a scalable backend service for real-time data processing and analytics",
+    "User Engagement Features - Implement user accounts, personalized dashboards, and community features for enhanced user interaction",
+
   ],
   
   metrics: {
-    duration: "6 months",
+    duration: "1 week",
     teamSize: "Solo project with stakeholder collaboration",
-    linesOfCode: "~15,000 lines",
+    linesOfCode: "~1,000 lines",
     userBase: "Professional baseball organizations"
   }
 };

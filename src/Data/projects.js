@@ -1,7 +1,7 @@
 const projects = [
     {
         title: "Oliver Projections Website",
-        date: "May 31, 2025",
+        date: "Current",
         description: "An encyclopedia for statistics and portal for expert analysis and projections covering all leagues and ages in the baseball world. Created to serve 1000's of users, clients, and subscribers with real-time data and insights. The site will feature advanced search capabilities with RESTful API connected to a robust database of baseball players in every league and age group.",
         tags: ["Javascript", "Python", "SQL", "React", "HTML", "CSS", "AWS", ],
         type: "WEBAPP",
@@ -11,7 +11,7 @@ const projects = [
     {
         
         title: "Flash Stats Website",
-        date: "December 4, 2024",
+        date: "July 20, 2024",
         description: "A frontend platform providing information about Flash-Stats Co. Flash-Stats serves real-time statistics, interactive data visualizations, advanced analytics, and expert driven projections to the MLB. Built with modern web technologies to deliver seamless user experience across devices.",
         tags: ["React", "Typescript", "Tailwind", "Vercel", "Node.js", "Tailwind CSS"],
         type: "WEB",
@@ -20,8 +20,8 @@ const projects = [
     },
     {
         title: "Fusion Help Desk Ticketing System",
-        date: "October 15, 2024",
-        description: "Enterprise-grade ticketing system designed to serve the employees of Fusion Technology LLC with automated workflow management, real-time analytics, extensive logging, architected scalable backend services and intuitive admin dashboard.",
+        date: "February 1, 2025",
+        description: "Enterprise-grade IT ticketing system designed to serve the employees of Fusion Technology LLC with role-based access control, microsoft authentication, real-time analytics, extensive logging, architected scalable backend services and intuitive admin dashboard.",
         tags: ["Spring Boot", "Java", "Python", "Azure DB & Hosting", "HTML", "CSS"],
         type: "WEBAPP",
         image: "/images/projects/HelpDeskImage.jpg",
@@ -29,7 +29,7 @@ const projects = [
     },
     {
         title: "PLNTD SIPS",
-        date: "August 1, 2024",
+        date: "August 1, 2025",
         description: "Front-end platform for a client's small business. Features product listings, instagram integration, and responsive design. ",
         tags: ["React", "Node.js", "Vercel", "Tailwind CSS"],
         type: "WEB",
@@ -38,8 +38,8 @@ const projects = [
     },
     {
         title: "Warehouse Inventory Management System",
-        date: "June 15, 2024",
-        description: "Real-time inventory management system with automated stock tracking. Implemented lightweight cloud-based architecture with Firebase integration.",
+        date: "July 1, 2025",
+        description: "Real-time inventory management system with automated stock tracking. Implemented lightweight cloud-based architecture with Firebase integration. Currently serves 50+ users.",
         tags: ["TypeScript", "Node.js", "Firebase DB & Hosting", "React"],
         type: "WEBAPP",
         image: "/images/projects/crackingandstacking.png",
@@ -47,8 +47,8 @@ const projects = [
     },
     {
         title: "Rocket League Beer League Site",
-        date: "March 1, 2024",
-        description: "Community gaming league platform with admin dashboard, tournament management, and real-time leaderboards. Features responsive design, and dynamic content updates.",
+        date: "July 7, 2025",
+        description: "Community gaming league platform with admin dashboard, tournament management, and real-time leaderboards. Features responsive design, and dynamic content updates. Currently serves 20+ users.",
         tags: ["React", "Node.js", "Vercel Hosting", "Firebase DB", "Tailwind CSS"],
         type: "WEBAPP",
         image: "/images/projects/rlbl.png",
@@ -56,8 +56,8 @@ const projects = [
     },
     {
         title: "Rantr Social Media Webapp",
-        date: "April 10, 2024",
-        description: "Social media web application with real-time messaging, user-generated content, and interactive engagement features. Implemented secure authentication and scalable cloud infrastructure.",
+        date: "April 10, 2023",
+        description: "Social media web application with real-time messaging, user-generated content, and interactive engagement features. Implemented secure authentication and scalable cloud infrastructure. Built to serve 100+ users concurrently.",
         tags: ["React", "Node.js", "Firebase DB & Hosting"],
         type: "WEBAPP",
         image: "/images/projects/rantr.png",
@@ -65,9 +65,9 @@ const projects = [
     },
     {
         title: "PICARD - Platform for Intelligent Computer Algorithm Research and Development",
-        date: "February 15, 2024",
-        description: "Research platform for algorithm development featuring containerized deployment, database optimization, and modern frontend architecture. Built with enterprise-grade security and scalability considerations.",
-        tags: ["C#", ".NET", "Docker", "Vite", "MySQL"],
+        date: "December 20, 2024",
+        description: "Research platform for algorithm development featuring containerized deployment and self-regulating backend optimization with apache spark and hadoop. Built with enterprise-grade scalability and performance considerations. Created to serve WVU machine learning researchers to input and test algorithms on extremely large datasets.",
+        tags: ["C#", ".NET", "Docker", "Spark", "Hadoop", "Vite", "MySQL"],
         type: "WEBAPP",
         image: "/images/projects/picard.png",
         link: "unauthorized"
@@ -84,7 +84,7 @@ const projects = [
     {
         title:"VR Class Lessons Demo",
         date: "November 23, 2023",
-        description: "Immersive VR educational application developed for academic research, featuring 3D environment modeling, interactive simulations, and Oculus integration. Demonstrates expertise in Unity 3D development and C# programming.",
+        description: "Immersive VR educational application developed for academic simulations, featuring 3D environment modeling, and class-specific interactive simulations through Oculus VR headset. Demonstrates expertise in Unity 3D development and C# programming.",
         tags: ["Unity 3D", "C#", "Oculus"],
         type: "Virtual Reality Unity3D App",
         image: "/images/projects/vr.png",
@@ -93,7 +93,7 @@ const projects = [
     {
         title: "FitTrackr fitness app",
         date: "October 10, 2023",
-        description: "Mobile fitness tracking application with data persistence, progress analytics, and goal-setting features. Developed using Spring Boot architecture with MySQL database integration.",
+        description: "Mobile fitness tracking application. Developed using Spring Boot architecture with MySQL database integration. Allows users to create and manage fitness plans, track workouts, and monitor progress. Demonstrates expertise in backend development and user experience design.",
         tags: ["Spring Boot", "Java", "MySQL"],
         type: "WEBAPP",
         image: "/images/projects/ft.png",
@@ -101,7 +101,7 @@ const projects = [
     },
     {
         title: "Linux Operating System",
-        date: "September 5, 2023",
+        date: "April 5, 2024",
         description: "Custom Linux distribution developed from kernel-level programming, featuring system calls, memory management, and process scheduling. Demonstrates low-level programming expertise and systems architecture knowledge.",
         tags: ["C", "Assembly", "Linux"],
         type: "OS",
@@ -110,16 +110,16 @@ const projects = [
     },
     {
         title: "Compiler CS410",
-        date: "December 15, 2023",
-        description: "A comprehensive compiler implementation built in Java, featuring complete lexical analysis, parsing, semantic analysis, and code generation phases for academic coursework.",
-        tags: ["Java", "Compiler Design", "Parser", "Lexical Analysis", "Code Generation"],
+        date: "December 15, 2024",
+        description: "A 3-tier compiler implementation built in Java, featuring complete lexical analysis, parsing, semantic analysis, and code generation phases for academic coursework.",
+        tags: ["Java", "Compiler Design", "Language Parsing", "Lexical Analysis", "Code Generation"],
         type: "COMPILER",
         image: "/images/projects/compiler.png",
         link: "https://youtu.be/WqTmFLIZOLU"
     },
     {
         title: "Full Stack User Management System",
-        date: "August 20, 2023",
+        date: "December 1, 2024",
         description: "Enterprise user management system with role-based access control, OAuth2.0 authentication, and AWS cloud deployment. Features secure API endpoints and comprehensive admin functionality.",
         tags: ["Java", "Spring Boot", "MySQL", "AWS", "React", "OAuth2.0"],
         type: "WEBAPP",

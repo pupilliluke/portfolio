@@ -1,12 +1,11 @@
 // Fitness Tracker Spring Boot Project Template Data
 export const fitnessTrackerTemplate = {
-  overview: "A comprehensive fitness tracking application built with Spring Boot backend and modern web technologies. The platform enables users to track workouts, monitor progress, set fitness goals, and maintain detailed exercise logs. Features include user authentication, workout planning, progress analytics, and social features for fitness community engagement.",
+  overview: "A fitness tracking application built with Spring Boot backend and modern web technologies. The platform enables users to track workouts, monitor progress, and maintain detailed exercise logs. Features include user authentication, workout planning, and progress analytics.",
   
   keyFeatures: [
     "Comprehensive Workout Tracking - Detailed exercise logging with sets, reps, weights, and duration tracking across multiple workout types",
     "Progress Analytics - Visual progress charts, performance trends, and goal achievement tracking with statistical analysis",
-    "User Authentication & Profiles - Secure user registration, login, and personalized profile management with fitness preferences",
-    "Social Features - Community engagement with workout sharing, progress comparisons, and motivational features"
+    "User Authentication & Profiles - Secure user registration, login, and personalized profile management with fitness preferences"
   ],
   
   challenges: [
@@ -25,7 +24,7 @@ export const fitnessTrackerTemplate = {
     architecture: "Spring Boot REST API with MVC architecture, JPA for data persistence, and RESTful web services",
     database: "MySQL database with JPA/Hibernate ORM, optimized with proper indexing and relationship modeling",
     deployment: "Spring Boot embedded server with Maven build automation and environment-specific configuration",
-    testing: "JUnit and Mockito for unit testing, Spring Boot Test for integration testing with test database"
+    testing: "JUnit for unit testing, Spring Boot Test for integration testing with test database"
   },
   
   learnings: [
@@ -41,9 +40,9 @@ export const fitnessTrackerTemplate = {
   ],
   
   metrics: {
-    duration: "5 months",
-    teamSize: "Solo project",
-    linesOfCode: "~12,000 lines",
+    duration: "4 months",
+    teamSize: "4-person team academic project",
+    linesOfCode: "~4,000 lines",
     userBase: "Fitness enthusiasts and personal trainers"
   }
 };

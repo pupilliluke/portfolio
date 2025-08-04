@@ -1,6 +1,6 @@
 // Mobile Inventory App Project Template Data
 export const inventoryAppTemplate = {
-  overview: "A comprehensive mobile inventory management application built with React Native and Expo, designed for real-time inventory tracking of fireworks and retail products. The app features secure authentication, real-time Firebase integration, and advanced filtering capabilities, enabling businesses to efficiently manage their inventory across multiple locations including showrooms, warehouses, and storage facilities.",
+  overview: "A comprehensive mobile inventory management application built with React Native and Expo, designed for real-time inventory tracking of warehouse retail products. The app features authentication, real-time Firebase integration, and advanced filtering capabilities, enabling businesses to efficiently manage their inventory across multiple locations including showrooms, warehouses, and storage facilities.",
   
   keyFeatures: [
     "Real-time Inventory Management - Live tracking of inventory levels across multiple locations (showroom, warehouse, storage) with instant updates",
@@ -24,12 +24,12 @@ export const inventoryAppTemplate = {
   technicalDetails: {
     architecture: "React Native application with Expo framework, implementing Context API for state management and React Navigation for routing",
     database: "Firebase Realtime Database with real-time synchronization, anonymous authentication, and structured data modeling",
-    deployment: "Expo Application Services (EAS) for streamlined building and deployment to app stores and web platforms",
+    deployment: "Firebase hosting with Expo for cross-platform deployment, supporting iOS, Android, and web",
     testing: "TypeScript integration for type safety and development-time error prevention"
   },
   
   learnings: [
-    "Mobile Development Expertise - Mastered React Native, Expo framework, and cross-platform mobile development patterns",
+    "Mobile Development Expertise - Gained Experience in React Native, Expo framework, and cross-platform mobile development patterns",
     "Real-time Database Management - Gained experience with Firebase integration, real-time synchronization, and offline capabilities",
     "TypeScript Proficiency - Developed strong skills in TypeScript for enhanced code quality and maintainability"
   ],
@@ -41,9 +41,9 @@ export const inventoryAppTemplate = {
   ],
   
   metrics: {
-    duration: "4 months",
+    duration: "1 week",
     teamSize: "Solo project",
-    linesOfCode: "~8,000 lines",
-    userBase: "Small business inventory management"
+    linesOfCode: "~1,000 lines",
+    userBase: "Phantom Fireworks Management and Warehouse Staff"
   }
 };
