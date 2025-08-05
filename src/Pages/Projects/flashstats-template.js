@@ -42,7 +42,7 @@ export const flashstatsTemplate = {
   metrics: {
     duration: "1 week",
     teamSize: "Solo project with stakeholder collaboration",
-    linesOfCode: "~1,000 lines",
+    linesOfCode: "~500 lines",
     userBase: "Professional baseball organizations"
   }
 };

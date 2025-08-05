@@ -37,8 +37,8 @@ const Education = () => {
           <li>Artificial Intelligence</li>
           <li>Operating Systems</li>
           <li>Database Systems</li>
-          <li>Software Engineering</li>
-          <li>Big Data Engineering</li>
+          <li>Software Engineering I & II</li>
+          <li>Big Data Engineering (Grad Level)</li>
           <li>Calculus 1-3</li>
         </ul>
       </div>
@@ -49,6 +49,7 @@ const Education = () => {
         <ul className="list-disc list-inside text-gray-300 text-sm space-y-1 pl-4">
           <li>WVU Ai Club</li>
           <li>Theta Chi Fraternity</li>
+          <li>WVU Engineering Challenge Camp Counselor</li>
         </ul>
       </div>
     </motion.section>

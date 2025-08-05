@@ -16,7 +16,7 @@ const projects = [
         tags: ["React", "Typescript", "Tailwind", "Vercel", "Node.js", "Tailwind CSS"],
         type: "WEB",
         image: "/images/projects/fs.png",
-        link: "https://flashstats.vercel.app/"
+        link: "https://flashstats.net"
     },
     {
         title: "Fusion Help Desk Ticketing System",
