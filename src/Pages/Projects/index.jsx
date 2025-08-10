@@ -49,13 +49,24 @@ const ProjectsPage = () => {
           return (
             <a key={project.title} href={`/projects/${slug}`} className="group">
               <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-105">
-                {/* Image section */}
+                {/* Image/Video section */}
                 <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+                  {project.video ? (
+                    <iframe
+                      src={`${project.video}?autoplay=1&mute=1&loop=1&playlist=${project.video.split('/embed/')[1]}&controls=0`}
+                      title={project.title}
+                      className="w-full h-48 transition-transform duration-700 group-hover:scale-105"
+                      frameBorder="0"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                    ></iframe>
+                  ) : (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  )}
                   
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

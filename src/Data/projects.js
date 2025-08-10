@@ -1,5 +1,15 @@
 const projects = [
     {
+        title: "Collins Signatures",
+        date: "1 day",
+        description: "Interactive 3D baseball signature design studio with real-time customization and visualization. Features Three.js 3D rendering, texture and video export capabilities, project management gallery, and responsive design. Built with modern web technologies to provide a specialized creative tool for baseball signature design.",
+        tags: ["React", "Three.js", "Tailwind CSS", "Firebase", "Vite", "Zustand"],
+        type: "WEBAPP",
+        image: "/images/projects/collins-signatures-thumbnail.png",
+        video: "https://www.youtube.com/embed/kXGafZLR7t8",
+        link: "https://baseball-sigs.web.app/"
+    },
+    {
         title: "Oliver Projections Website",
         date: "Current",
         description: "An encyclopedia for statistics and portal for expert analysis and projections covering all leagues and ages in the baseball world. Created to serve 1000's of users, clients, and subscribers with real-time data and insights. The site will feature advanced search capabilities with RESTful API connected to a robust database of baseball players in every league and age group.",

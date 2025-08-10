@@ -11,6 +11,7 @@ import { fitnessTrackerTemplate } from "./fitness-tracker-template";
 import { rocketLeagueTemplate } from "./rocket-league-template";
 import { juiceShopTemplate } from "./juice-shop-template";
 import { compilerTemplate } from "./compiler-template";
+import { collinsSignaturesTemplate } from "./collins-signatures-template";
 
 const ProjectDetail = () => {
   const { slug } = useParams();
@@ -50,6 +51,9 @@ const ProjectDetail = () => {
   const getTemplateData = (projectTitle) => {
     const titleLower = projectTitle.toLowerCase();
     
+    if (titleLower.includes('collins signatures')) {
+      return collinsSignaturesTemplate;
+    }
     if (titleLower.includes('flash stats')) {
       return flashstatsTemplate;
     }
@@ -130,6 +134,9 @@ const ProjectDetail = () => {
     const titleLower = projectTitle.toLowerCase();
     const baseURL = "https://github.com/pupilliluke";
     
+    if (titleLower.includes('collins signatures')) {
+      return `${baseURL}/baseball-sigs`;
+    }
     if (titleLower.includes('flash stats')) {
       return `${baseURL}/FLASHSTATS`;
     }
@@ -232,15 +239,26 @@ const ProjectDetail = () => {
         </div>
       </div>
 
-      {/* Hero Image */}
+      {/* Hero Image/Video */}
       <div className="mb-16">
         <div className="relative group">
           <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-blue-400/20 to-blue-500/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-          <img
-            src={project.image}
-            alt={project.title}
-            className="relative w-full h-96 object-cover rounded-2xl shadow-xl border border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500"
-          />
+          {project.video && project.title.toLowerCase().includes('collins signatures') ? (
+            <iframe
+              src={`${project.video}?autoplay=1&mute=1&loop=1&playlist=${project.video.split('/embed/')[1]}&controls=0&showinfo=0&rel=0&modestbranding=1`}
+              title={project.title}
+              className="relative w-full h-[70vh] min-h-[500px] rounded-2xl shadow-xl border border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500"
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <img
+              src={project.image}
+              alt={project.title}
+              className="relative w-full h-96 object-cover rounded-2xl shadow-xl border border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500"
+            />
+          )}
         </div>
       </div>
 
