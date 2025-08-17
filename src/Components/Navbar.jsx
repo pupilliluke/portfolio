@@ -30,7 +30,9 @@ const Navbar = () => {
     }`}>
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent font-bold text-xl">LP</span>
+          <a href="/" className="transition-transform duration-300 hover:scale-110">
+            <img src = "images/favicon-32x32.png" alt="Pacman Logo" className="w-8 h-8" />
+          </a>
         </div>
         
         <ul className="hidden md:flex space-x-2 text-sm font-medium">

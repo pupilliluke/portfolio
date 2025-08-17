@@ -27,7 +27,15 @@ const Experience = () => {
               </span>
             </div>
             <p className="text-sm text-gray-400 mb-1">
-              {exp.company} • {exp.location}
+              {exp.company} • {exp.location} • <a 
+                href={exp.website.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-orange-400 hover:text-orange-300 transition-colors inline-flex items-center gap-1"
+              >
+                {exp.website.text}
+                <img src={exp.website.icon} alt="External link" className="w-3 h-3" />
+              </a>
             </p>
             <p className="text-gray-300 text-sm leading-relaxed">
               {exp.description}
