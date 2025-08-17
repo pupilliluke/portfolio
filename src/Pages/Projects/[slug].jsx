@@ -12,6 +12,8 @@ import { rocketLeagueTemplate } from "./rocket-league-template";
 import { juiceShopTemplate } from "./juice-shop-template";
 import { compilerTemplate } from "./compiler-template";
 import { collinsSignaturesTemplate } from "./collins-signatures-template";
+import { FusionHelpDeskTemplate } from './fusion-helpdesk-template';
+import { OliverProjectionsTemplate } from './oliver-projections-template';
 
 const ProjectDetail = () => {
   const { slug } = useParams();
@@ -53,6 +55,12 @@ const ProjectDetail = () => {
     
     if (titleLower.includes('collins signatures')) {
       return collinsSignaturesTemplate;
+    }
+    if (titleLower.includes('oliver projections')) {
+      return OliverProjectionsTemplate;
+    }
+    if (titleLower.includes('fusion help')) {
+      return FusionHelpDeskTemplate;
     }
     if (titleLower.includes('flash stats')) {
       return flashstatsTemplate;

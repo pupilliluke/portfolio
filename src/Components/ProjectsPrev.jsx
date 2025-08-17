@@ -12,15 +12,6 @@ const featuredProjects = [
     video: "https://www.youtube.com/embed/kXGafZLR7t8",
   },
   {
-    slug: "oliver-projections-website",
-    title: "Oliver Projections Website", 
-    date: "May 31, 2025",
-    description: "An encyclopedia for statistics and portal for expert analysis and projections covering all leagues and ages in the baseball world.",
-    tags: ["Javascript", "Python", "SQL", "React", "HTML", "CSS"],
-    type: "WEBAPP",
-    image: "/images/projects/OP.png",
-  },
-  {
     slug: "flash-stats-website",
     title: "Flash Stats Website",
     date: "December 4, 2024", 

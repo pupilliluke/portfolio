@@ -10,15 +10,6 @@ const projects = [
         link: "https://baseball-sigs.web.app/"
     },
     {
-        title: "Oliver Projections Website",
-        date: "Current",
-        description: "An encyclopedia for statistics and portal for expert analysis and projections covering all leagues and ages in the baseball world. Created to serve 1000's of users, clients, and subscribers with real-time data and insights. The site will feature advanced search capabilities with RESTful API connected to a robust database of baseball players in every league and age group.",
-        tags: ["Javascript", "Python", "SQL", "React", "HTML", "CSS", "AWS", ],
-        type: "WEBAPP",
-        image: "/images/projects/OP.png",
-        link: "https://youtu.be/Uhk2b_zTPXI"
-    },
-    {
         
         title: "Flash Stats Website",
         date: "July 20, 2024",
@@ -54,6 +45,15 @@ const projects = [
         type: "WEBAPP",
         image: "/images/projects/crackingandstacking.png",
         link: "https://crackingandstacking.com"
+    },
+      {
+        title: "Oliver Projections Website",
+        date: "Current",
+        description: "An encyclopedia for statistics and portal for expert analysis and projections covering all leagues and ages in the baseball world. Created to serve 1000's of users, clients, and subscribers with real-time data and insights. The site will feature advanced search capabilities with RESTful API connected to a robust database of baseball players in every league and age group.",
+        tags: ["Javascript", "Python", "SQL", "React", "HTML", "CSS", "AWS", ],
+        type: "WEBAPP",
+        image: "/images/projects/OP.png",
+        link: "https://youtu.be/Uhk2b_zTPXI"
     },
     {
         title: "Rocket League Beer League Site",
