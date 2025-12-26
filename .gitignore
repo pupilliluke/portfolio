@@ -11,6 +11,13 @@
 # production
 /build
 
+# Next.js
+/.next
+.next/
+.next/**
+pupilli-portfolio-main/.next/
+pupilli-portfolio-main/.next/**
+
 # misc
 .DS_Store
 .env.local
@@ -21,5 +28,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-"public/images/projects/demo.mp4"
-"public/images/projects/demo.mp4" 
+
+# Large files
+public/images/projects/demo.mp4
+public/images/projectImages/demo.mp4
+pupilli-portfolio-main/public/images/projectImages/demo.mp4
+*.mp4 
