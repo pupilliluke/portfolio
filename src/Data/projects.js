@@ -1,21 +1,21 @@
 const projects = [
     {
-        
-        title: "Flash Stats Website",
-        date: "July 20, 2024",
-        description: "A frontend platform providing information about Flash-Stats Co. Flash-Stats serves real-time statistics, interactive data visualizations, advanced analytics, and expert driven projections to the MLB. Built with modern web technologies to deliver seamless user experience across devices.",
-        tags: ["React", "Typescript", "Tailwind", "Vercel", "Node.js", "Tailwind CSS"],
+
+        title: "Flash Stats - Baseball Scouting Research Platform",
+        date: "January 2025",
+        description: "Leading SDLC for scouting research platform using client/server architecture to replace current system serving active MLB clientele (NY Yankees, Pirates, more). Creator of public facing site. REST API & B2B Software platform built with Python, JavaScript, React, and SQL to serve professional baseball teams with critical scouting data.",
+        tags: ["Python", "JavaScript", "React", "SQL", "REST API", "Jira", "Teams"],
         type: "WEB",
         image: "/images/projects/fs.png",
-        link: "https://flashstats.net"
+        link: "https://www.FlashStats.net"
     },
     {
-        title: "Fusion Help Desk Ticketing System",
-        date: "February 1, 2025",
-        description: "Enterprise-grade IT ticketing system designed to serve the employees of Fusion Technology LLC with role-based access control, microsoft authentication, real-time analytics, extensive logging, architected scalable backend services and intuitive admin dashboard.",
-        tags: ["Spring Boot", "Java", "Python", "Azure DB & Hosting", "HTML", "CSS"],
+        title: "IT Help Desk Ticketing Platform",
+        date: "2025",
+        description: "Built secure, automated IT ticketing system in Spring Boot to replace current system, reducing request handling time by 50% and improved internal employee accountability, visibility, and workflow efficiency. Real-time status updates, role-based access control, company-only access through Microsoft authentication, exportable excel reports, complex ticket filtering, SonarQube Testing, and spring security.",
+        tags: ["Java", "Spring Boot", "SQL", "Azure", "Maven", "Spring Security"],
         type: "WEBAPP",
-        image: "/images/projects/HelpDeskImage.jpg",
+        image: "/images/projects/fusionSpring.png",
         link: "unauthorized"
     },
     {
@@ -74,10 +74,10 @@ const projects = [
         link: "https://rantr-8c5dc.web.app/"
     },
     {
-        title: "PICARD - Platform for Intelligent Computer Algorithm Research and Development",
-        date: "December 20, 2024",
-        description: "Research platform for algorithm development featuring containerized deployment and self-regulating backend optimization with apache spark and hadoop. Built with enterprise-grade scalability and performance considerations. Created to serve WVU machine learning researchers to input and test algorithms on extremely large datasets.",
-        tags: ["C#", ".NET", "Docker", "Spark", "Hadoop", "Vite", "MySQL"],
+        title: "PICARD - Platform for Intelligent Computer Algorithm Research & Design",
+        date: "2024",
+        description: "Built a secure platform for ML researchers (Dr. Devine, WVU) to automate tests on 1M+ entry datasets. Used for finding images containing pulsars out of millions of radio telescope images (low false negative tolerance). Reduced turnaround time by 70-95%; decreased processor needs from ~20 to 1 via Hadoop cluster.",
+        tags: ["C#", ".NET Core", "Linux", "Apache Spark", "Hadoop", "Docker", "SQL", "Google OAuth2.0"],
         type: "WEBAPP",
         image: "/images/projects/picard.png",
         link: "unauthorized"

@@ -10,8 +10,8 @@ const Hero = () => {
           <span className="text-white">Pupilli</span>
         </h1>
         <p className="text-slate-300 mb-4">
-          <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-semibold">Full Stack Software Engineer</span>{" "}
-          building scalable web applications and enterprise solutions from{" "}
+          <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-semibold">Full-Stack Developer</span>{" "}
+          | Java, Spring, AWS, Azure | Building scalable services used by MLB teams & ML Research Teams from{" "}
           <span className="text-blue-400 font-medium">Pittsburgh, PA</span>
         </p>
         <div className="flex gap-4">
@@ -22,7 +22,7 @@ const Hero = () => {
             Contact Me
           </a>
           <a 
-            href="/Luke Pupilli Resume 8.6.2025.pdf" 
+            href="/Luke Pupilli Resume 12.8.2025.pdf" 
             download 
             className="bg-green-700 hover:bg-slate-600/50 text-white font-medium px-6 py-3 rounded-lg border border-green-600/50 hover:border-slate-500/50 transition-all duration-300 transform hover:scale-105"
           >

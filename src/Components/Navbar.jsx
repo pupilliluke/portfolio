@@ -31,7 +31,7 @@ const Navbar = () => {
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <a href="/" className="transition-transform duration-300 hover:scale-110">
-            <img src = "images/favicon-32x32.png" alt="Pacman Logo" className="w-8 h-8" />
+            <img src="/images/favicon-32x32.png" alt="Pacman Logo" className="w-8 h-8" />
           </a>
         </div>
         
