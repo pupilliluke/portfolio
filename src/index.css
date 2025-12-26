@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Google+Sans+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-custom-900 font-google antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/5 border border-white/10;
+  }
+  
+  .glass-card {
+    @apply bg-slate-custom-800/50 border border-slate-custom-700/50 shadow-google;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-google-blue-500 to-google-blue-600 hover:from-google-blue-600 hover:to-google-blue-700 text-white font-medium px-6 py-3 rounded-lg shadow-google-lg transition-all duration-300 transform hover:scale-105 hover:shadow-glow-blue;
+  }
+  
+  .btn-secondary {
+    @apply bg-slate-custom-700/50 hover:bg-slate-custom-600/50 text-white font-medium px-6 py-3 rounded-lg border border-slate-custom-600/50 hover:border-slate-custom-500/50 transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-google-blue-400 via-google-blue-500 to-google-blue-600 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-warm {
+    @apply bg-gradient-to-r from-google-yellow-400 via-orange-400 to-google-red-400 bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 ease-out hover:transform hover:scale-105 hover:shadow-google-xl;
+  }
+  
+  .input-modern {
+    @apply bg-slate-custom-800/50 border border-slate-custom-600/50 rounded-lg px-4 py-3 text-white placeholder-slate-custom-400 focus:outline-none focus:ring-2 focus:ring-google-blue-500/50 focus:border-google-blue-500/50 transition-all duration-300;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
+}
