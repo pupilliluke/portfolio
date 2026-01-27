@@ -2,18 +2,38 @@
 
 const experiences = [
   {
+    company: "Personal Software Solutions",
+    position: "Founder",
+    location: "Remote",
+    website: { url: "https://www.pssforyou.com", text: "Go to Website", icon: "/images/link.svg" },
+    startDate: "2025",
+    endDate: "Present",
+    description:
+      "Founded software consulting business providing custom web development, automation solutions, and technical consulting services for small businesses and startups.",
+  },
+  {
+    company: "TheDyo",
+    position: "Junior Developer (Contract)",
+    location: "Remote",
+    website: { url: "https://thedyo.com", text: "Go to Website", icon: "/images/link.svg" },
+    startDate: "January 2026",
+    endDate: "Present",
+    description:
+      "Building full-stack e-commerce platform featuring professional design pages and 3D product rendering. Developing scalable solutions using React, Node.js, Vercel deployment, and AWS S3 for media storage and asset management.",
+  },
+  {
     company: "Styled & Sorted",
-    position: "Software Engineer",
+    position: "Software Engineer (Contract)",
     location: "Remote",
     website: { url: "https://mommode.glide.page/", text: "Go to Website", icon: "/images/link.svg" },
     startDate: "August 2025",
-    endDate: "Present",
+    endDate: "December 2025",
     description:
       "Created MVP (https://mommode.glide.page/) and built fully automated ROI system, reducing time spent daily from 1.5 hours to 2 minutes. Part-time role focused on automation and efficiency improvements using JavaScript.",
   },
   {
     company: "Flash Stats",
-    position: "Software Engineer Intern",
+    position: "Software Engineer (Contract)",
     location: "Pittsburgh, PA",
     website: { url: "https://www.FlashStats.net", text: "Go to Website", icon: "/images/link.svg" },
     startDate: "January 2025",

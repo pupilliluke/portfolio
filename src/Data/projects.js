@@ -1,5 +1,23 @@
 const projects = [
     {
+        title: "PSS Portal - Client Management Platform",
+        date: "Current",
+        description: "Currently in progress. Client portal for Personal Software Solutions providing project management, communication, and service delivery tools.",
+        tags: ["React", "Node.js", "Vercel", "Tailwind CSS"],
+        type: "WEBAPP",
+        image: "/images/projects/pss.png",
+        link: "https://www.pssforyou.com"
+    },
+    {
+        title: "MyEHP - Employee Health Benefits Platform",
+        date: "2025",
+        description: "SEO-optimized company information website for a pre-tax employee health benefits provider. Features responsive design, EmailJS contact form integration for client inquiries, and clear presentation of services helping businesses save up to 30% on employee health benefits.",
+        tags: ["React", "Next.js", "Vercel", "Tailwind CSS", "Node.js"],
+        type: "WEBAPP",
+        image: "/images/projects/myehp.png",
+        link: "https://my-ehp.vercel.app/"
+    },
+    {
 
         title: "Flash Stats - Baseball Scouting Research Platform",
         date: "January 2025",

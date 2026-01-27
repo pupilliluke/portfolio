@@ -12,7 +12,12 @@
       "Bash(npm install)",
       "Bash(FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --force --index-filter 'git rm -rf --cached --ignore-unmatch .next pupilli-portfolio-main pupilli-portfolio-main/public/images/projectImages/demo.mp4' --prune-empty --tag-name-filter cat -- --all)",
       "Bash(FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --force --index-filter \"git rm -rf --cached --ignore-unmatch .next pupilli-portfolio-main\" --prune-empty --tag-name-filter cat -- --all)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(timeout:*)",
+      "Bash(npx --yes playwright screenshot:*)",
+      "Bash(npx playwright install chromium)",
+      "Bash(powershell -Command:*)",
+      "Bash(powershell:*)"
     ],
     "deny": []
   }

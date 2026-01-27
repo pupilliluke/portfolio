@@ -14,6 +14,7 @@ import { compilerTemplate } from "./compiler-template";
 import { collinsSignaturesTemplate } from "./collins-signatures-template";
 import { FusionHelpDeskTemplate } from './fusion-helpdesk-template';
 import { OliverProjectionsTemplate } from './oliver-projections-template';
+import { myehpTemplate } from './myehp-template';
 
 const ProjectDetail = () => {
   const { slug } = useParams();
@@ -52,7 +53,10 @@ const ProjectDetail = () => {
   // Get project-specific template data
   const getTemplateData = (projectTitle) => {
     const titleLower = projectTitle.toLowerCase();
-    
+
+    if (titleLower.includes('myehp')) {
+      return myehpTemplate;
+    }
     if (titleLower.includes('collins signatures')) {
       return collinsSignaturesTemplate;
     }
@@ -141,7 +145,10 @@ const ProjectDetail = () => {
   const getGitHubLink = (projectTitle) => {
     const titleLower = projectTitle.toLowerCase();
     const baseURL = "https://github.com/pupilliluke";
-    
+
+    if (titleLower.includes('myehp')) {
+      return `${baseURL}/my-ehp`;
+    }
     if (titleLower.includes('collins signatures')) {
       return `${baseURL}/baseball-sigs`;
     }

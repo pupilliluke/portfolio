@@ -29,7 +29,7 @@ const Hero = () => {
             Contact Me
           </a>
           <a
-            href="/Luke Pupilli Resume 12.8.2025.pdf"
+            href="/Luke Pupilli Resume 1.13.2026.pdf"
             download
             className="bg-green-700 hover:bg-slate-600/50 text-white font-medium px-6 py-3 rounded-lg border border-green-600/50 hover:border-slate-500/50 transition-all duration-300 transform hover:scale-105"
           >
