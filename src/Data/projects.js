@@ -1,11 +1,11 @@
 const projects = [
     {
-        title: "PSS Portal - Client Management Platform",
-        date: "Current",
-        description: "Currently in progress. Client portal for Personal Software Solutions providing project management, communication, and service delivery tools.",
-        tags: ["React", "Node.js", "Vercel", "Tailwind CSS"],
+        title: "PSS Portal - Enterprise Lead Generation CRM",
+        date: "2026",
+        description: "Multi-tenant CRM platform with lead management, Google Sheets import, and Stripe pay-per-service billing. Features JWT authentication with refresh tokens, activity logging, file attachments, and a React 19 frontend with Vite and Tailwind CSS 4. Backend built with ASP.NET Core 8 and PostgreSQL deployed on Render.",
+        tags: ["C#", "TypeScript", "React", "ASP.NET Core", "PostgreSQL", "Stripe", "Tailwind CSS"],
         type: "WEBAPP",
-        image: "/images/projects/pss.png",
+        image: "/images/projects/pss-portal/dashboard.png",
         link: "https://www.pssforyou.com"
     },
     {

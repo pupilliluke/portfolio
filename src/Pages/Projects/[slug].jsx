@@ -15,6 +15,7 @@ import { collinsSignaturesTemplate } from "./collins-signatures-template";
 import { FusionHelpDeskTemplate } from './fusion-helpdesk-template';
 import { OliverProjectionsTemplate } from './oliver-projections-template';
 import { myehpTemplate } from './myehp-template';
+import { pssPortalTemplate } from './pss-portal-template';
 
 const ProjectDetail = () => {
   const { slug } = useParams();
@@ -54,6 +55,9 @@ const ProjectDetail = () => {
   const getTemplateData = (projectTitle) => {
     const titleLower = projectTitle.toLowerCase();
 
+    if (titleLower.includes('pss portal')) {
+      return pssPortalTemplate;
+    }
     if (titleLower.includes('myehp')) {
       return myehpTemplate;
     }
@@ -146,6 +150,9 @@ const ProjectDetail = () => {
     const titleLower = projectTitle.toLowerCase();
     const baseURL = "https://github.com/pupilliluke";
 
+    if (titleLower.includes('pss portal')) {
+      return `${baseURL}/PSS-Portal`;
+    }
     if (titleLower.includes('myehp')) {
       return `${baseURL}/my-ehp`;
     }
