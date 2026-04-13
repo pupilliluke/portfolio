@@ -1,0 +1,325 @@
+# www.pupilli.dev - Complete Site Data
+
+> **Last updated:** 2026-04-13
+> This file contains all content and data from Luke Pupilli's portfolio website.
+> AI: read this file when asked to look at or reference www.pupilli.dev.
+
+---
+
+## Site Overview
+
+- **URL:** https://www.pupilli.dev
+- **Type:** React Single Page Application (SPA)
+- **Deployed on:** Vercel
+- **Tech Stack:** React 19, Tailwind CSS, Framer Motion, React Router DOM 7, React Icons, EmailJS
+- **Theme:** Dark slate (#0f172a) with white text, dotted background pattern
+
+---
+
+## Routing Structure
+
+| Path | Page |
+|------|------|
+| `/` | Home (Hero + About + Skills + Featured Projects + Contact) |
+| `/projects` | All projects gallery |
+| `/projects/:slug` | Individual project detail pages |
+| `/skills` | Full skills page |
+| `/experience` | Work experience timeline |
+| `/education` | Education details |
+| `/contact` | Contact form page |
+
+---
+
+## Hero Section
+
+- **Greeting:** "Hola"
+- **Name:** Luke Pupilli
+- **Title:** Full Stack Software Engineer
+- **Location:** Pittsburgh, PA
+- **Stats:** 15+ Projects Built | 20+ Technologies | 3+ Years Experience
+- **CTA Buttons:** "Contact Me" (links to /contact), "Download Resume" (PDF download)
+
+---
+
+## About Section
+
+I'm Luke Pupilli, a full-stack software engineer with 3+ years of experience building scalable web applications and enterprise solutions.
+
+I specialize in Java, Spring Boot, Node, and cloud technologies, with expertise in database design, API development, and DevOps practices.
+
+My passion lies in creating efficient, maintainable code that drives business value and delivers exceptional user experiences. I thrive in collaborative environments and enjoy solving complex technical challenges.
+
+---
+
+## Projects (16 total)
+
+### 1. PSS Portal - Enterprise Lead Generation CRM
+- **Date:** 2026
+- **Type:** WEBAPP
+- **Description:** Multi-tenant CRM platform with lead management, Google Sheets import, and Stripe pay-per-service billing. Features JWT authentication with refresh tokens, activity logging, file attachments, and a React 19 frontend with Vite and Tailwind CSS 4. Backend built with ASP.NET Core 8 and PostgreSQL deployed on Render.
+- **Tags:** C#, TypeScript, React, ASP.NET Core, PostgreSQL, Stripe, Tailwind CSS
+- **Link:** https://www.pssforyou.com
+- **Image:** /images/projects/pss-portal/dashboard.png
+
+### 2. MyEHP - Employee Health Benefits Platform
+- **Date:** 2025
+- **Type:** WEBAPP
+- **Description:** SEO-optimized company information website for a pre-tax employee health benefits provider. Features responsive design, EmailJS contact form integration for client inquiries, and clear presentation of services helping businesses save up to 30% on employee health benefits.
+- **Tags:** React, Next.js, Vercel, Tailwind CSS, Node.js
+- **Link:** https://my-ehp.vercel.app/
+- **Image:** /images/projects/myehp.png
+
+### 3. Flash Stats - Baseball Scouting Research Platform
+- **Date:** January 2025
+- **Type:** WEB
+- **Description:** Leading SDLC for scouting research platform using client/server architecture to replace current system serving active MLB clientele (NY Yankees, Pirates, more). Creator of public facing site. REST API & B2B Software platform built with Python, JavaScript, React, and SQL to serve professional baseball teams with critical scouting data.
+- **Tags:** Python, JavaScript, React, SQL, REST API, Jira, Teams
+- **Link:** https://www.FlashStats.net
+- **Image:** /images/projects/fs.png
+
+### 4. IT Help Desk Ticketing Platform
+- **Date:** 2025
+- **Type:** WEBAPP
+- **Description:** Built secure, automated IT ticketing system in Spring Boot to replace current system, reducing request handling time by 50% and improved internal employee accountability, visibility, and workflow efficiency. Real-time status updates, role-based access control, company-only access through Microsoft authentication, exportable excel reports, complex ticket filtering, SonarQube Testing, and spring security.
+- **Tags:** Java, Spring Boot, SQL, Azure, Maven, Spring Security
+- **Link:** unauthorized (internal)
+- **Image:** /images/projects/fusionSpring.png
+
+### 5. PLNTD SIPS
+- **Date:** August 1, 2025
+- **Type:** WEB
+- **Description:** Front-end platform for a client's small business. Features product listings, instagram integration, and responsive design.
+- **Tags:** React, Node.js, Vercel, Tailwind CSS
+- **Link:** https://plntdsips.com
+- **Image:** /images/projects/ps.png
+
+### 6. Warehouse Inventory Management System
+- **Date:** July 1, 2025
+- **Type:** WEBAPP
+- **Description:** Real-time inventory management system with automated stock tracking. Implemented lightweight cloud-based architecture with Firebase integration. Currently serves 50+ users.
+- **Tags:** TypeScript, Node.js, Firebase DB & Hosting, React
+- **Link:** https://crackingandstacking.com
+- **Image:** /images/projects/crackingandstacking.png
+
+### 7. Oliver Projections Website
+- **Date:** Current (In Progress)
+- **Type:** WEBAPP
+- **Description:** An encyclopedia for statistics and portal for expert analysis and projections covering all leagues and ages in the baseball world. Created to serve 1000's of users, clients, and subscribers with real-time data and insights. The site will feature advanced search capabilities with RESTful API connected to a robust database of baseball players in every league and age group.
+- **Tags:** Javascript, Python, SQL, React, HTML, CSS, AWS
+- **Link:** https://youtu.be/Uhk2b_zTPXI
+- **Image:** /images/projects/OP.png
+
+### 8. Collins Signatures
+- **Date:** 1 day
+- **Type:** WEBAPP
+- **Description:** Interactive 3D baseball signature design studio with real-time customization and visualization. Features Three.js 3D rendering, texture and video export capabilities, project management gallery, and responsive design. Built with modern web technologies to provide a specialized creative tool for baseball signature design.
+- **Tags:** React, Three.js, Tailwind CSS, Firebase, Vite, Zustand
+- **Video:** https://www.youtube.com/embed/YVJii0ypxs0
+- **Link:** https://baseball-sigs.web.app/
+- **Image:** /images/projects/collins-signatures-thumbnail.png
+
+### 9. Rocket League Beer League Site
+- **Date:** July 7, 2025
+- **Type:** WEBAPP
+- **Description:** Community gaming league platform with admin dashboard, tournament management, and real-time leaderboards. Features responsive design, and dynamic content updates. Currently serves 20+ users.
+- **Tags:** React, Node.js, Vercel Hosting, Firebase DB, Tailwind CSS
+- **Link:** https://rlbl-website.vercel.app/
+- **Image:** /images/projects/rlbl.png
+
+### 10. Rantr Social Media Webapp
+- **Date:** April 10, 2023
+- **Type:** WEBAPP
+- **Description:** Social media web application with real-time messaging, user-generated content, and interactive engagement features. Implemented secure authentication and scalable cloud infrastructure. Built to serve 100+ users concurrently.
+- **Tags:** React, Node.js, Firebase DB & Hosting
+- **Link:** https://rantr-8c5dc.web.app/
+- **Image:** /images/projects/rantr.png
+
+### 11. PICARD - Platform for Intelligent Computer Algorithm Research & Design
+- **Date:** 2024
+- **Type:** WEBAPP
+- **Description:** Built a secure platform for ML researchers (Dr. Devine, WVU) to automate tests on 1M+ entry datasets. Used for finding images containing pulsars out of millions of radio telescope images (low false negative tolerance). Reduced turnaround time by 70-95%; decreased processor needs from ~20 to 1 via Hadoop cluster.
+- **Tags:** C#, .NET Core, Linux, Apache Spark, Hadoop, Docker, SQL, Google OAuth2.0
+- **Link:** unauthorized (internal)
+- **Image:** /images/projects/picard.png
+
+### 12. VR Class Lessons Demo
+- **Date:** November 23, 2023
+- **Type:** Virtual Reality Unity3D App
+- **Description:** Immersive VR educational application developed for academic simulations, featuring 3D environment modeling, and class-specific interactive simulations through Oculus VR headset. Demonstrates expertise in Unity 3D development and C# programming.
+- **Tags:** Unity 3D, C#, Oculus
+- **Link:** https://youtube.com/shorts/ckcaBy53GvA?feature=share
+- **Image:** /images/projects/vr.png
+
+### 13. FitTrackr Fitness App
+- **Date:** October 10, 2023
+- **Type:** WEBAPP
+- **Description:** Mobile fitness tracking application. Developed using Spring Boot architecture with MySQL database integration. Allows users to create and manage fitness plans, track workouts, and monitor progress.
+- **Tags:** Spring Boot, Java, MySQL
+- **Link:** n/a
+- **Image:** /images/projects/ft.png
+
+### 14. Linux Operating System
+- **Date:** April 5, 2024
+- **Type:** OS
+- **Description:** Custom Linux distribution developed from kernel-level programming, featuring system calls, memory management, and process scheduling. Demonstrates low-level programming expertise and systems architecture knowledge.
+- **Tags:** C, Assembly, Linux
+- **Link:** n/a
+- **Image:** /images/projects/osImage.png
+
+### 15. Compiler CS410
+- **Date:** December 15, 2024
+- **Type:** COMPILER
+- **Description:** A 3-tier compiler implementation built in Java, featuring complete lexical analysis, parsing, semantic analysis, and code generation phases for academic coursework.
+- **Tags:** Java, Compiler Design, Language Parsing, Lexical Analysis, Code Generation
+- **Link:** https://youtu.be/WqTmFLIZOLU
+- **Image:** /images/projects/compiler.png
+
+### 16. Full Stack User Management System
+- **Date:** December 1, 2024
+- **Type:** WEBAPP
+- **Description:** Enterprise user management system with role-based access control, OAuth2.0 authentication, and AWS cloud deployment. Features secure API endpoints and comprehensive admin functionality.
+- **Tags:** Java, Spring Boot, MySQL, AWS, React, OAuth2.0
+- **Link:** n/a
+- **Image:** /images/projects/fusionSpring.png
+
+---
+
+## Skills
+
+### Languages
+Java, Python, C#, HTML, CSS, JavaScript, SQL, C, Pascal, Haskell, AJAX
+
+### Frontend Frameworks
+React, Next.js, Bootstrap
+
+### Styling Libraries
+Bootstrap, Tailwind CSS
+
+### Backend Frameworks
+Spring Boot, .NET, Node.js, Unity 3D
+
+### Databases & CMS
+SQL, MySQL, SQLite, Firebase
+
+### Cloud & DevOps
+Azure, AWS, Git, Docker, Jira, GitHub, Google OAuth2, Firebase, Spark, Hadoop, Confluence
+
+### Other Tools
+Jira, Teams, Confluence, VS Code, Git, GitHub, Node.js, Maven
+
+---
+
+## Work Experience
+
+### 1. Voltra LLC - Co-Founder
+- **Location:** Pittsburgh, PA
+- **Dates:** 2026 - Present
+- **Website:** https://voltrapgh.com
+- **Description:** Co-founded enterprise workflow automation company focused on streamlining business operations through custom automation solutions. Building intelligent tools to help organizations optimize processes, reduce manual workloads, and scale efficiently.
+
+### 2. Personal Software Solutions - Founder
+- **Location:** Remote
+- **Dates:** 2025 - Present
+- **Website:** https://www.pssforyou.com
+- **Description:** Founded software consulting business providing custom web development, automation solutions, and technical consulting services for small businesses and startups.
+
+### 3. TheDyo - Junior Developer (Contract)
+- **Location:** Remote
+- **Dates:** January 2026 - Present
+- **Website:** https://thedyo.com
+- **Description:** Building full-stack e-commerce platform featuring professional design pages and 3D product rendering. Developing scalable solutions using React, Node.js, Vercel deployment, and AWS S3 for media storage and asset management.
+
+### 4. Styled & Sorted - Software Engineer (Contract)
+- **Location:** Remote
+- **Dates:** August 2025 - December 2025
+- **Website:** https://mommode.glide.page/
+- **Description:** Created MVP (https://mommode.glide.page/) and built fully automated ROI system, reducing time spent daily from 1.5 hours to 2 minutes. Part-time role focused on automation and efficiency improvements using JavaScript.
+
+### 5. Flash Stats - Software Engineer (Contract)
+- **Location:** Pittsburgh, PA
+- **Dates:** January 2025 - Present
+- **Website:** https://www.FlashStats.net
+- **Description:** Leading SDLC for scouting research platform using client/server architecture to replace current system serving active MLB clientele (NY Yankees, Pirates, more). Creator of public facing site (www.FlashStats.net). REST API & B2B Software development using Python, JavaScript, React, SQL.
+
+### 6. Fusion Technology LLC - Software Developer Intern
+- **Location:** Remote
+- **Dates:** 2024 - Present
+- **Website:** https://fusiontechnology-llc.com
+- **Description:** Built secure, automated IT ticketing system in Spring Boot to replace current system, reducing request handling time by 50% and improved internal employee accountability, visibility, and workflow efficiency. DOD and FBI secure software development using Java, Spring, REST API, SQL, Azure, React.
+
+### 7. Wehrle Global Supply Chain Lab WVU - Programming Assistant
+- **Location:** Morgantown, WV
+- **Dates:** 2022 - 2024
+- **Website:** https://business.wvu.edu/labs-and-facilities/wehrle-global-supply-chain-lab
+- **Description:** Collaborated with faculty for R&D of student lessons in virtual reality created environments. Virtual Student Lessons development using C#, Oculus, Unity 3D.
+
+---
+
+## Education
+
+- **School:** West Virginia University
+- **Degree:** Bachelor of Science in Computer Science
+- **Duration:** August 2020 - December 2024
+- **Location:** Morgantown, WV
+- **Accreditation:** ABET accredited
+
+### Relevant Coursework
+Data Structures & Algorithms, Artificial Intelligence, Operating Systems, Database Systems, Software Engineering I & II, Big Data Engineering (Grad Level), Calculus 1-3
+
+### Extracurriculars
+WVU AI Club, Theta Chi Fraternity, WVU Engineering Challenge Camp Counselor
+
+---
+
+## Contact Information
+
+- **Name:** Luke Pupilli
+- **Title:** Full Stack Developer
+- **Location:** Pittsburgh, Pennsylvania
+- **Email:** pupilli.dev@gmail.com
+
+### Social Links
+- **Discord:** https://discord.com/users/luke_pup
+- **LinkedIn:** https://www.linkedin.com/in/luke-pupilli-b36a22258/
+- **GitHub:** https://github.com/pupilliluke
+- **Instagram:** https://www.instagram.com/lukepupilli_
+
+---
+
+## Featured Projects (Homepage)
+1. Collins Signatures
+2. Flash Stats Website
+3. Fusion Help Desk Ticketing System
+
+---
+
+## Navigation & Layout
+
+### Navbar
+- Fixed navigation with scroll-based background opacity change
+- Desktop links: Home, Skills, Projects, Experience, Education, Contact
+- Mobile: hamburger menu with slide-out panel
+- Social media icons (Discord, LinkedIn, GitHub, Instagram)
+- Logo/Favicon on left
+- Responsive breakpoint at md (768px)
+
+### Footer
+- LP Logo badge
+- "Made with heart by Luke Pupilli"
+- Copyright with dynamic year
+- Social links grid
+- "Built with React & Tailwind CSS | Animated with Framer Motion | Deployed on Vercel"
+
+### Main Layout
+- Dark slate background (#0f172a), white text
+- Scroll progress bar at top (gradient blue)
+- Scroll-to-top button (appears after 100px scroll)
+- Smooth page transitions with Framer Motion
+
+---
+
+## SEO & Metadata
+
+- **HTML Title:** "Portfolio"
+- **Meta Description:** "Luke Pupilli - Full Stack Software Engineer specializing in React.js, Node.js, and cloud technologies. Building scalable web applications and enterprise solutions."
+- **Theme Color:** #0f172a
