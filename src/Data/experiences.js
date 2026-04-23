@@ -2,16 +2,6 @@
 
 const experiences = [
   {
-    company: "Voltra LLC",
-    position: "Co-Founder",
-    location: "Pittsburgh, PA",
-    website: { url: "https://voltrapgh.com", text: "Go to Website", icon: "/images/link.svg" },
-    startDate: "2026",
-    endDate: "Present",
-    description:
-      "Co-founded enterprise workflow automation company focused on streamlining business operations through custom automation solutions. Building intelligent tools to help organizations optimize processes, reduce manual workloads, and scale efficiently.",
-  },
-  {
     company: "Personal Software Solutions",
     position: "Founder",
     location: "Remote",
