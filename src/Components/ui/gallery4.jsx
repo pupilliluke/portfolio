@@ -1,0 +1,142 @@
+import React, { useEffect, useState, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+
+/**
+ * Gallery4 — a horizontally-scrolling carousel of cards.
+ *
+ * Adapted from the shadcn/ui "gallery4" block to this project's stack:
+ * plain JS + Tailwind 3 (slate dark theme) + react-icons, using
+ * embla-carousel-react directly instead of the shadcn Carousel wrapper.
+ *
+ * @param {Object}   props
+ * @param {string}   props.title
+ * @param {string}   props.description
+ * @param {Array<{id:string,title:string,description:string,href:string,image:string}>} props.items
+ */
+export const Gallery4 = ({
+  title = "Featured Projects",
+  description = "",
+  items = [],
+}) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "start",
+    breakpoints: {
+      "(max-width: 768px)": { dragFree: true },
+    },
+  });
+
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const onSelect = useCallback((api) => {
+    if (!api) return;
+    setCanScrollPrev(api.canScrollPrev());
+    setCanScrollNext(api.canScrollNext());
+    setCurrentSlide(api.selectedScrollSnap());
+  }, []);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect(emblaApi);
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  return (
+    <section className="py-8">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="mb-8 flex items-end justify-between md:mb-12">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl">
+              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                {title}
+              </span>
+            </h2>
+            {description && (
+              <p className="max-w-lg text-slate-300 leading-relaxed">
+                {description}
+              </p>
+            )}
+          </div>
+          <div className="hidden shrink-0 gap-2 md:flex">
+            <button
+              type="button"
+              onClick={() => emblaApi?.scrollPrev()}
+              disabled={!canScrollPrev}
+              aria-label="Previous slide"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700/50 bg-slate-800/50 text-white transition-colors hover:bg-slate-700/50 disabled:opacity-40 disabled:hover:bg-slate-800/50"
+            >
+              <FiArrowLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => emblaApi?.scrollNext()}
+              disabled={!canScrollNext}
+              aria-label="Next slide"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700/50 bg-slate-800/50 text-white transition-colors hover:bg-slate-700/50 disabled:opacity-40 disabled:hover:bg-slate-800/50"
+            >
+              <FiArrowRight className="h-5 w-5" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full">
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex ml-0 2xl:ml-[max(8rem,calc(50vw-700px))] 2xl:mr-[max(0rem,calc(50vw-700px))]">
+            {items.map((item) => (
+              <div
+                key={item.id}
+                className="min-w-0 shrink-0 grow-0 max-w-[320px] pl-5 lg:max-w-[360px]"
+              >
+                <a href={item.href} className="group block rounded-xl">
+                  <div className="relative h-full min-h-[27rem] max-w-full overflow-hidden rounded-xl border border-slate-700/50 md:aspect-[5/4] lg:aspect-[16/9]">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="absolute h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 h-full bg-gradient-to-b from-slate-900/0 via-slate-900/50 to-slate-900/95" />
+                    <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-6 text-white md:p-8">
+                      <div className="mb-2 pt-4 text-xl font-semibold">
+                        {item.title}
+                      </div>
+                      <div className="mb-8 line-clamp-2 text-sm text-slate-300 md:mb-9">
+                        {item.description}
+                      </div>
+                      <div className="flex items-center text-sm font-medium">
+                        Read more
+                        <FiArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8 flex justify-center gap-2">
+          {items.map((_, index) => (
+            <button
+              key={index}
+              className={`h-2 w-2 rounded-full transition-colors ${
+                currentSlide === index ? "bg-blue-500" : "bg-blue-500/20"
+              }`}
+              onClick={() => emblaApi?.scrollTo(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Gallery4;
