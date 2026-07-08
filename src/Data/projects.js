@@ -91,7 +91,7 @@ const projects = [
     {
         title: "Rantr Social Media Webapp",
         date: "April 10, 2023",
-        description: "Social media web application with real-time messaging, user-generated content, and interactive engagement features. Implemented secure authentication and scalable cloud infrastructure. Built to serve 100+ users concurrently.",
+        description: "My very first team project and first deployed app, built as a sophomore in college. Social media web application with real-time messaging, user-generated content, and interactive engagement features. Implemented secure authentication and scalable cloud infrastructure. Built to serve 100+ users concurrently.",
         tags: ["React", "Node.js", "Firebase DB & Hosting"],
         type: "WEBAPP",
         image: "/images/projects/rantr.png",

@@ -32,7 +32,10 @@
       "Bash(node --input-type=module -e 'import\\('\\\\''file:///C:/Users/lukel/AppData/Local/Temp/claude/c--Users-lukel-SideProjects-pupilli-portfolio-main/604331d0-ba2b-4c6c-8b4f-4184d7238dde/scratchpad/p.mjs'\\\\''\\).then\\(m=>console.log\\('\\\\''projects OK, count='\\\\'',m.default.length,'\\\\''| first='\\\\'',m.default[0].title\\)\\).catch\\(e=>console.log\\('\\\\''P ERR'\\\\'',e.message\\)\\); import\\('\\\\''file:///C:/Users/lukel/AppData/Local/Temp/claude/c--Users-lukel-SideProjects-pupilli-portfolio-main/604331d0-ba2b-4c6c-8b4f-4184d7238dde/scratchpad/t.mjs'\\\\''\\).then\\(m=>console.log\\('\\\\''template OK, keys='\\\\'',Object.keys\\(m.FusionHelpDeskTemplate\\).length,'\\\\''| features='\\\\'',m.FusionHelpDeskTemplate.keyFeatures.length\\)\\).catch\\(e=>console.log\\('\\\\''T ERR'\\\\'',e.message\\)\\)')",
       "Skill(artifact-design)",
       "Skill(artifact-design:*)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git diff *)"
     ],
     "deny": [],
     "additionalDirectories": [

@@ -11,6 +11,7 @@ import { fitnessTrackerTemplate } from "./fitness-tracker-template";
 import { rocketLeagueTemplate } from "./rocket-league-template";
 import { juiceShopTemplate } from "./juice-shop-template";
 import { compilerTemplate } from "./compiler-template";
+import { osTemplate } from "./os-template";
 import { collinsSignaturesTemplate } from "./collins-signatures-template";
 import { FusionHelpDeskTemplate } from './fusion-helpdesk-template';
 import { OliverProjectionsTemplate } from './oliver-projections-template';
@@ -90,6 +91,9 @@ const ProjectDetail = () => {
     }
     if (titleLower.includes('compiler')) {
       return compilerTemplate;
+    }
+    if (titleLower.includes('operating system')) {
+      return osTemplate;
     }
     
     // Default template for projects without specific templates
