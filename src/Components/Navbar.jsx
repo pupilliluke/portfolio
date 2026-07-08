@@ -26,6 +26,17 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const ThemeToggle = ({ className = "" }) => (
+    <button
+      onClick={toggleTheme}
+      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+      title={theme === "dark" ? "Light mode" : "Dark mode"}
+      className={`flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 ${className}`}
+    >
+      {theme === "dark" ? <HiSun className="w-4 h-4" /> : <HiMoon className="w-4 h-4" />}
+    </button>
+  );
+
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
       isScrolled
@@ -61,16 +72,19 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Hamburger Menu Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white transition-colors duration-300"
-          aria-label="Toggle mobile menu"
-        >
-          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
-        </button>
+        {/* Mobile controls: persistent theme toggle + hamburger */}
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle className="w-9 h-9" />
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="flex flex-col justify-center items-center w-9 h-9 space-y-1 text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white transition-colors duration-300"
+            aria-label="Toggle mobile menu"
+          >
+            <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+            <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+          </button>
+        </div>
 
         {/* Desktop Social Icons */}
         <div className="hidden md:flex items-center space-x-4 text-slate-500 dark:text-slate-300 text-lg">
@@ -92,14 +106,7 @@ const Navbar = () => {
           ))}
 
           {/* Light / Dark theme toggle */}
-          <button
-            onClick={toggleTheme}
-            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-            title={theme === "dark" ? "Light mode" : "Dark mode"}
-            className="ml-1 w-7 h-7 flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300"
-          >
-            {theme === "dark" ? <HiSun className="w-4 h-4" /> : <HiMoon className="w-3.5 h-3.5" />}
-          </button>
+          <ThemeToggle className="ml-1 w-7 h-7" />
         </div>
       </nav>
 
@@ -116,22 +123,13 @@ const Navbar = () => {
             {/* Mobile Menu Header */}
             <div className="flex items-center justify-between p-6 border-b border-slate-200 dark:border-slate-700/50 flex-shrink-0">
               <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent font-bold text-xl">Luke Pupilli</span>
-              <div className="flex items-center gap-1">
-                <button
-                  onClick={toggleTheme}
-                  aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-                  className="w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors duration-300"
-                >
-                  {theme === "dark" ? <HiSun className="w-4 h-4" /> : <HiMoon className="w-4 h-4" />}
-                </button>
-                <button
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors duration-300 p-2"
-                  aria-label="Close menu"
-                >
-                  <HiXMark className="w-6 h-6" />
-                </button>
-              </div>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors duration-300 p-2"
+                aria-label="Close menu"
+              >
+                <HiXMark className="w-6 h-6" />
+              </button>
             </div>
 
             {/* Mobile Navigation Links */}

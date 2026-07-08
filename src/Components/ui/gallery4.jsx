@@ -21,9 +21,8 @@ export const Gallery4 = ({
 }) => {
   const [emblaRef] = useEmblaCarousel({
     align: "start",
-    breakpoints: {
-      "(max-width: 768px)": { dragFree: true },
-    },
+    containScroll: "trimSnaps",
+    dragFree: false,
   });
 
   return (
