@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import ShaderBackground from "../Components/ui/shader-background-1";
 
 const ExperienceCard = ({ exp }) => (
-  <div className="bg-[#1e293b] p-6 rounded-lg shadow-md transition hover:shadow-lg">
+  <div className="bg-white dark:bg-[#1e293b] border border-slate-200 dark:border-transparent p-6 rounded-lg shadow-md transition hover:shadow-lg">
     <div className="flex flex-col md:flex-row md:justify-between mb-2">
-      <h3 className="text-xl font-semibold text-white">{exp.position}</h3>
+      <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{exp.position}</h3>
       <span className="text-sm text-orange-400">
         {exp.startDate} – {exp.endDate}
       </span>
     </div>
-    <p className="text-sm text-gray-400 mb-1">
+    <p className="text-sm text-slate-500 dark:text-gray-400 mb-1">
       {exp.company} • {exp.location}
       {exp.website && (
         <>
@@ -28,7 +28,7 @@ const ExperienceCard = ({ exp }) => (
         </>
       )}
     </p>
-    <p className="text-gray-300 text-sm leading-relaxed">{exp.description}</p>
+    <p className="text-slate-600 dark:text-gray-300 text-sm leading-relaxed">{exp.description}</p>
   </div>
 );
 
@@ -41,7 +41,7 @@ const ExperienceToggle = ({ active, onChange }) => {
   return (
     <div className="flex justify-center mb-12">
       {/* Border: 1px top/sides, 3px bottom; border-slate-500 is a lighter shade than the slate-700 toggle */}
-      <div className="inline-flex rounded-xl border border-b-[3px] border-slate-500 bg-slate-700 p-0.5 overflow-hidden">
+      <div className="inline-flex rounded-xl border border-b-[3px] border-slate-300 dark:border-slate-500 bg-slate-200 dark:bg-slate-700 p-0.5 overflow-hidden">
         {tabs.map((tab) => {
           const isActive = active === tab.key;
           return (
@@ -52,7 +52,7 @@ const ExperienceToggle = ({ active, onChange }) => {
               className={`rounded-lg px-4 py-1.5 text-sm font-semibold transition-colors duration-300 ${
                 isActive
                   ? "bg-slate-900 text-white shadow-inner"
-                  : "text-slate-300 hover:text-white"
+                  : "text-slate-600 dark:text-slate-300 hover:text-white"
               }`}
             >
               {tab.label}
@@ -78,7 +78,7 @@ const Experience = () => {
           mouseEnable={false}
         />
         {/* Fade the shader so foreground text stays readable */}
-        <div className="absolute inset-0 bg-slate-900/70" />
+        <div className="absolute inset-0 bg-slate-50/70 dark:bg-slate-900/70" />
       </div>
 
       <motion.section
@@ -88,7 +88,7 @@ const Experience = () => {
         id="experience"
         className="relative max-w-6xl mx-auto px-6 py-20"
       >
-        <h2 className="text-3xl font-bold text-white mb-6 text-center">Experience</h2>
+        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6 text-center">Experience</h2>
 
         <ExperienceToggle active={activeTab} onChange={setActiveTab} />
 

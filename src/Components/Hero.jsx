@@ -10,15 +10,15 @@ const Hero = () => {
         <p className="text-lg mb-2">Hola 👋</p>
         <h1 className="text-5xl font-bold">
           <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Luke</span>{" "}
-          <span className="text-white">Pupilli</span>
+          <span className="text-slate-900 dark:text-white">Pupilli</span>
         </h1>
-        <p className="text-slate-300 mb-2">
+        <p className="text-slate-600 dark:text-slate-300 mb-2">
           <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-semibold">Full-Stack Developer</span>
         </p>
-        <p className="text-slate-300 mb-2">
+        <p className="text-slate-600 dark:text-slate-300 mb-2">
           Java, Spring, Azure | Building scalable services used by MLB teams & ML Research Teams
         </p>
-        <p className="text-slate-400 mb-4">
+        <p className="text-slate-500 dark:text-slate-400 mb-4">
           Based in <span className="text-blue-400 font-medium">Pittsburgh, PA</span>
         </p>
         <div className="flex gap-4">
@@ -38,18 +38,18 @@ const Hero = () => {
         </div>
 
         {/* Stats */}
-        <div className="hidden lg:flex gap-8 mt-12 pt-8 border-t border-slate-700/50">
+        <div className="hidden lg:flex gap-8 mt-12 pt-8 border-t border-slate-200 dark:border-slate-700/50">
           <div className="text-center">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-1">15+</div>
-            <div className="text-sm text-slate-400">Projects Built</div>
+            <div className="text-sm text-slate-500 dark:text-slate-400">Projects Built</div>
           </div>
           <div className="text-center">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-1">20+</div>
-            <div className="text-sm text-slate-400">Technologies</div>
+            <div className="text-sm text-slate-500 dark:text-slate-400">Technologies</div>
           </div>
           <div className="text-center">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-1">{yearsOfExperience}+ Years</div>
-            <div className="text-sm text-slate-400">Experience</div>
+            <div className="text-sm text-slate-500 dark:text-slate-400">Experience</div>
           </div>
         </div>
       </div>
@@ -60,7 +60,7 @@ const Hero = () => {
           <img 
             src="/images/luke-pupilli.png" 
             alt="Luke Pupilli" 
-            className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-xl border border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500" 
+            className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500"
           />
         </div>
       </div>

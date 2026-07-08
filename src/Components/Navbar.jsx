@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { FaDiscord, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { 
-  HiHome, 
-  HiCommandLine, 
-  HiRocketLaunch, 
-  HiBriefcase, 
-  HiAcademicCap, 
+import {
+  HiHome,
+  HiCommandLine,
+  HiRocketLaunch,
+  HiBriefcase,
+  HiAcademicCap,
   HiEnvelope,
-  HiXMark 
+  HiXMark,
+  HiSun,
+  HiMoon
 } from "react-icons/hi2";
+import { useTheme } from "../context/ThemeContext";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,8 +28,8 @@ const Navbar = () => {
 
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-      isScrolled 
-        ? 'bg-slate-800/90 border-b border-slate-700/50 shadow-xl' 
+      isScrolled
+        ? 'bg-white/90 border-b border-slate-200 dark:bg-slate-800/90 dark:border-slate-700/50 shadow-xl backdrop-blur-md'
         : 'bg-transparent'
     }`}>
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -47,7 +51,7 @@ const Navbar = () => {
             <li key={label}>
               <a
                 href={href}
-                className="group relative text-slate-200 hover:text-white transition-all duration-300 px-4 py-2 rounded-lg hover:bg-white/5"
+                className="group relative text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white transition-all duration-300 px-4 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
               >
                 <span className="relative z-10">{label}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-blue-400/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -60,7 +64,7 @@ const Navbar = () => {
         {/* Hamburger Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 text-slate-200 hover:text-white transition-colors duration-300"
+          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white transition-colors duration-300"
           aria-label="Toggle mobile menu"
         >
           <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
@@ -69,23 +73,33 @@ const Navbar = () => {
         </button>
 
         {/* Desktop Social Icons */}
-        <div className="hidden md:flex space-x-4 text-slate-300 text-lg">
+        <div className="hidden md:flex items-center space-x-4 text-slate-500 dark:text-slate-300 text-lg">
           {[
             { icon: FaDiscord, href: "https://discord.com/users/luke_pup", color: "hover:text-indigo-400" },
             { icon: FaLinkedin, href: "https://www.linkedin.com/in/luke-pupilli-b36a22258/", color: "hover:text-blue-400" },
-            { icon: FaGithub, href: "https://github.com/pupilliluke", color: "hover:text-white" },
+            { icon: FaGithub, href: "https://github.com/pupilliluke", color: "hover:text-slate-900 dark:hover:text-white" },
             { icon: FaInstagram, href: "https://www.instagram.com/lukepupilli_", color: "hover:text-pink-400" },
           ].map(({ icon: Icon, href, color }, index) => (
-            <a 
+            <a
               key={href}
               href={href}
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
-              className={`${color} transition-all duration-300 transform hover:scale-125 hover:rotate-12 p-2 rounded-lg hover:bg-white/5`}
+              className={`${color} transition-all duration-300 transform hover:scale-125 hover:rotate-12 p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5`}
             >
               <Icon />
             </a>
           ))}
+
+          {/* Light / Dark theme toggle */}
+          <button
+            onClick={toggleTheme}
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            title={theme === "dark" ? "Light mode" : "Dark mode"}
+            className="ml-1 w-7 h-7 flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300"
+          >
+            {theme === "dark" ? <HiSun className="w-4 h-4" /> : <HiMoon className="w-3.5 h-3.5" />}
+          </button>
         </div>
       </nav>
 
@@ -97,18 +111,27 @@ const Navbar = () => {
         ></div>
         
         {/* Mobile Menu Panel */}
-        <div className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-slate-800/95 backdrop-blur-md border-l border-slate-700/50 shadow-2xl transform transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-white/95 dark:bg-slate-800/95 backdrop-blur-md border-l border-slate-200 dark:border-slate-700/50 shadow-2xl transform transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex flex-col h-full overflow-hidden">
             {/* Mobile Menu Header */}
-            <div className="flex items-center justify-between p-6 border-b border-slate-700/50 flex-shrink-0">
+            <div className="flex items-center justify-between p-6 border-b border-slate-200 dark:border-slate-700/50 flex-shrink-0">
               <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent font-bold text-xl">Luke Pupilli</span>
-              <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-slate-300 hover:text-white transition-colors duration-300 p-2"
-                aria-label="Close menu"
-              >
-                <HiXMark className="w-6 h-6" />
-              </button>
+              <div className="flex items-center gap-1">
+                <button
+                  onClick={toggleTheme}
+                  aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                  className="w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors duration-300"
+                >
+                  {theme === "dark" ? <HiSun className="w-4 h-4" /> : <HiMoon className="w-4 h-4" />}
+                </button>
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors duration-300 p-2"
+                  aria-label="Close menu"
+                >
+                  <HiXMark className="w-6 h-6" />
+                </button>
+              </div>
             </div>
 
             {/* Mobile Navigation Links */}
@@ -126,12 +149,12 @@ const Navbar = () => {
                     <a
                       href={href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="group flex items-center space-x-4 text-slate-200 hover:text-white transition-all duration-300 p-4 rounded-xl hover:bg-slate-700/50 border border-transparent hover:border-slate-600/50"
+                      className="group flex items-center space-x-4 text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white transition-all duration-300 p-4 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700/50 border border-transparent hover:border-slate-200 dark:hover:border-slate-600/50"
                     >
                       <Icon className="text-xl transition-transform duration-300 group-hover:scale-110 text-blue-400" />
                       <span className="text-lg font-medium">{label}</span>
                       <div className="flex-1"></div>
-                      <svg className="w-5 h-5 text-slate-400 group-hover:text-blue-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-slate-500 dark:text-slate-400 group-hover:text-blue-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </a>
@@ -141,8 +164,8 @@ const Navbar = () => {
             </nav>
 
             {/* Mobile Social Links */}
-            <div className="px-6 pb-8 border-t border-slate-700/50 pt-6 flex-shrink-0">
-              <p className="text-slate-400 text-sm mb-4 font-medium">Connect with me</p>
+            <div className="px-6 pb-8 border-t border-slate-200 dark:border-slate-700/50 pt-6 flex-shrink-0">
+              <p className="text-slate-500 dark:text-slate-400 text-sm mb-4 font-medium">Connect with me</p>
               <div className="grid grid-cols-2 gap-3">
                 {[
                   { icon: FaDiscord, href: "https://discord.com/users/luke_pup", label: "Discord", color: "hover:text-indigo-400" },
@@ -150,12 +173,12 @@ const Navbar = () => {
                   { icon: FaGithub, href: "https://github.com/pupilliluke", label: "GitHub", color: "hover:text-white" },
                   { icon: FaInstagram, href: "https://www.instagram.com/lukepupilli_", label: "Instagram", color: "hover:text-pink-400" },
                 ].map(({ icon: Icon, href, label, color }) => (
-                  <a 
+                  <a
                     key={href}
                     href={href}
-                    target="_blank" 
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center space-x-3 text-slate-300 ${color} transition-all duration-300 p-3 rounded-lg hover:bg-slate-700/50 border border-slate-700/50 hover:border-slate-600/50`}
+                    className={`flex items-center space-x-3 text-slate-600 dark:text-slate-300 ${color} transition-all duration-300 p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700/50 border border-slate-200 dark:border-slate-700/50 hover:border-slate-300 dark:hover:border-slate-600/50`}
                   >
                     <Icon className="text-lg" />
                     <span className="text-sm font-medium">{label}</span>

@@ -45,27 +45,27 @@ const ProjectsPage = () => {
       <div className="max-w-7xl mx-auto px-6 pb-20 -mt-24 relative z-10">
       <div className="text-center mb-16">
         <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">All</span> <span className="text-white">Projects</span>
+          <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">All</span> <span className="text-slate-900 dark:text-white">Projects</span>
         </h1>
-        <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
           Explore my complete portfolio of projects, from{" "}
           <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-medium">web applications</span> to{" "}
           <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent font-medium">mobile solutions</span>.
         </p>
         
         {/* Project stats */}
-        <div className="flex justify-center gap-8 mt-8 pt-8 border-t border-slate-800/50">
+        <div className="flex justify-center gap-8 mt-8 pt-8 border-t border-slate-200 dark:border-slate-800/50">
           <div className="text-center">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-1">{projects.length}+</div>
-            <div className="text-sm text-slate-400">Projects</div>
+            <div className="text-sm text-slate-500 dark:text-slate-400">Projects</div>
           </div>
           <div className="text-center">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-1">15+</div>
-            <div className="text-sm text-slate-400">Technologies</div>
+            <div className="text-sm text-slate-500 dark:text-slate-400">Technologies</div>
           </div>
           <div className="text-center">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-1">3+</div>
-            <div className="text-sm text-slate-400">Years</div>
+            <div className="text-sm text-slate-500 dark:text-slate-400">Years</div>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@ const ProjectsPage = () => {
           const slug = project.title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
           return (
             <a key={project.title} href={`/projects/${slug}`} className="group">
-              <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-105">
+              <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-105">
                 {/* Image/Video section */}
                 <div className="relative overflow-hidden">
                   {project.video ? (
@@ -107,7 +107,7 @@ const ProjectsPage = () => {
 
                   {/* Hover arrow */}
                   <div className="absolute top-4 right-4 w-8 h-8 bg-white/10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-slate-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
                     </svg>
                   </div>
@@ -115,13 +115,13 @@ const ProjectsPage = () => {
 
                 {/* Content section */}
                 <div className="p-6 relative">
-                  <h3 className="text-white font-bold text-xl mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                  <h3 className="text-slate-900 dark:text-white font-bold text-xl mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                     {project.title}
                   </h3>
                   
-                  <p className="text-slate-400 text-sm mb-3 font-medium">{project.date}</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm mb-3 font-medium">{project.date}</p>
                   
-                  <p className="text-slate-300 text-sm mb-4 leading-relaxed line-clamp-3 group-hover:text-slate-200 transition-colors duration-300">
+                  <p className="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed line-clamp-3 group-hover:text-slate-200 transition-colors duration-300">
                     {project.description}
                   </p>
 
@@ -130,7 +130,7 @@ const ProjectsPage = () => {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 hover:text-white text-xs px-3 py-1.5 rounded-full border border-slate-600/30 hover:border-slate-500/50 transition-all duration-300"
+                        className="bg-slate-100/80 dark:bg-slate-700/50 hover:bg-slate-600/50 text-slate-600 dark:text-slate-300 hover:text-white text-xs px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-600/30 hover:border-slate-500/50 transition-all duration-300"
                       >
                         {tag}
                       </span>

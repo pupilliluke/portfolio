@@ -11,7 +11,7 @@ const EntryScreen = ({ onEnter }) => {
 
   // Fade in the start button after the animation loads
   useEffect(() => {
-    const timer = setTimeout(() => setStartVisible(true), 2000);
+    const timer = setTimeout(() => setStartVisible(true), 1000);
     return () => clearTimeout(timer);
   }, []);
 

@@ -19,20 +19,20 @@ const Education = () => {
         />
       </div>
 
-      <h2 className="text-4xl font-bold text-white mb-4">West Virginia University</h2>
+      <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">West Virginia University</h2>
       <h3 className="text-xl text-orange-400 font-semibold mb-2">
         Bachelor of Science in Computer Science
       </h3>
-      <p className="text-gray-400 text-sm mb-8">August 2020 – Dec 2024 • Morgantown, WV</p>
+      <p className="text-slate-500 dark:text-gray-400 text-sm mb-8">August 2020 – Dec 2024 • Morgantown, WV</p>
 
-      <p className="text-gray-300 text-md leading-relaxed mb-10 max-w-3xl">
+      <p className="text-slate-600 dark:text-gray-300 text-md leading-relaxed mb-10 max-w-3xl">
         ABET accredited computer science education with focus on software engineering principles, data structures, algorithms, and system design. Gained hands-on experience in full SDLC on agile teams, full-stack development, database management, creating machine learning models, and big data engineering through project-based learning.
       </p>
 
       {/* Relevant Coursework */}
       <div className="mb-12">
-        <h4 className="text-lg text-white font-semibold mb-2">Relevant Coursework</h4>
-        <ul className="list-disc list-inside text-gray-300 text-sm space-y-1 pl-4">
+        <h4 className="text-lg text-slate-900 dark:text-white font-semibold mb-2">Relevant Coursework</h4>
+        <ul className="list-disc list-inside text-slate-600 dark:text-gray-300 text-sm space-y-1 pl-4">
           <li>Data Structures & Algorithms</li>
           <li>Artificial Intelligence</li>
           <li>Operating Systems</li>
@@ -45,8 +45,8 @@ const Education = () => {
 
       {/* Extracurriculars */}
       <div>
-        <h4 className="text-lg text-white font-semibold mb-2">Extracurricular Activities</h4>
-        <ul className="list-disc list-inside text-gray-300 text-sm space-y-1 pl-4">
+        <h4 className="text-lg text-slate-900 dark:text-white font-semibold mb-2">Extracurricular Activities</h4>
+        <ul className="list-disc list-inside text-slate-600 dark:text-gray-300 text-sm space-y-1 pl-4">
           <li>WVU Ai Club</li>
           <li>Theta Chi Fraternity</li>
           <li>WVU Engineering Challenge Camp Counselor</li>

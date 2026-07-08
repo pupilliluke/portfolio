@@ -104,8 +104,8 @@ const Skills = () => {
       id="skills"
       className="max-w-6xl mx-auto px-6 py-20"
     >
-      <h2 className="text-3xl font-bold text-white mb-6">Skills</h2>
-      <p className="text-gray-300 mb-6">
+      <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">Skills</h2>
+      <p className="text-slate-600 dark:text-gray-300 mb-6">
         I specialize in building seamless, user-friendly applications using proven web technologies. My toolkit includes:
       </p>
 
@@ -114,12 +114,12 @@ const Skills = () => {
          {Object.entries(data).map(([category, { items, color, icon }]) => (
 
           <div key={category}>
-            <h3 className="text-lg text-white font-semibold mb-2">{category}</h3>
+            <h3 className="text-lg text-slate-900 dark:text-white font-semibold mb-2">{category}</h3>
             <div className="flex flex-wrap gap-2">
               {items.map((item) => (
                 <span
                   key={item}
-                  className="bg-gray-800 text-white text-sm px-3 py-1 rounded-full transition duration-300 hover:bg-orange-500 hover:scale-105"
+                  className="bg-slate-200 dark:bg-gray-800 text-slate-800 dark:text-white hover:text-white text-sm px-3 py-1 rounded-full transition duration-300 hover:bg-orange-500 hover:scale-105"
                 >
                   {item}
                 </span>
@@ -134,12 +134,12 @@ const Skills = () => {
         {CATEGORY_ORDER.filter((category) => groupedProjectTags[category]).map(
           (category) => (
             <div key={category}>
-              <h3 className="text-lg text-white font-semibold mb-2">{category}</h3>
+              <h3 className="text-lg text-slate-900 dark:text-white font-semibold mb-2">{category}</h3>
               <div className="flex flex-wrap gap-2">
                 {groupedProjectTags[category].map((tag) => (
                   <span
                     key={tag}
-                    className="bg-gray-800 text-white text-sm px-3 py-1 rounded-full transition duration-300 hover:bg-orange-500 hover:scale-105"
+                    className="bg-slate-200 dark:bg-gray-800 text-slate-800 dark:text-white hover:text-white text-sm px-3 py-1 rounded-full transition duration-300 hover:bg-orange-500 hover:scale-105"
                   >
                     {tag}
                   </span>

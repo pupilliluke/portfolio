@@ -86,7 +86,7 @@ const ProjectCard = ({ project, index }) => {
                 scale: isHovered ? 1.1 : 1 
               }}
             >
-              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-slate-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
               </svg>
             </motion.div>
@@ -95,7 +95,7 @@ const ProjectCard = ({ project, index }) => {
           {/* Content section */}
           <div className="p-6 relative">
             <motion.h3 
-              className="text-white font-display font-bold text-xl mb-2 group-hover:text-gradient transition-all duration-300"
+              className="text-slate-900 dark:text-white font-display font-bold text-xl mb-2 group-hover:text-gradient transition-all duration-300"
               animate={{ x: isHovered ? 4 : 0 }}
             >
               {title}

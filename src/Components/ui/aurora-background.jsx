@@ -93,7 +93,7 @@ export function AuroraBackground({
   const blobs = generateBlobs(colors, speed);
 
   return (
-    <div className={`relative w-full overflow-hidden ${className}`}>
+    <div className={`w-full overflow-hidden ${className}`}>
       {/* Aurora layer */}
       <div className="absolute inset-0 overflow-hidden">
         {blobs.map((blob, i) => (

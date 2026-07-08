@@ -19,6 +19,7 @@ import { OliverProjectionsTemplate } from './oliver-projections-template';
 import { myehpTemplate } from './myehp-template';
 import { pssPortalTemplate } from './pss-portal-template';
 import { fullStackUserTemplate } from './full-stack-user-template';
+import { vrLessonsTemplate } from './vr-lessons-template';
 
 const ProjectDetail = () => {
   const { slug } = useParams();
@@ -30,8 +31,8 @@ const ProjectDetail = () => {
   if (!project) {
     return (
       <div className="max-w-4xl mx-auto px-6 py-20 text-center">
-        <h1 className="text-4xl font-bold text-white mb-4">Project Not Found</h1>
-        <p className="text-slate-400 mb-8">The project you're looking for doesn't exist.</p>
+        <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Project Not Found</h1>
+        <p className="text-slate-500 dark:text-slate-400 mb-8">The project you're looking for doesn't exist.</p>
         <a 
           href="/projects" 
           className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105"
@@ -100,7 +101,10 @@ const ProjectDetail = () => {
     if (titleLower.includes('operating system')) {
       return osTemplate;
     }
-    
+    if (titleLower.includes('vr class') || titleLower.includes('vr lessons')) {
+      return vrLessonsTemplate;
+    }
+
     // Default template for projects without specific templates
     return {
       overview: "This is a comprehensive overview of the project. Describe what the project does, its main purpose, and why it was built. Explain the problem it solves and the value it provides to users or businesses.",
@@ -153,6 +157,14 @@ const ProjectDetail = () => {
   };
 
   const templateData = getTemplateData(project ? project.title : '');
+
+  // Break a long description into sentence-level lines for an airier layout.
+  // Split on ". " only when followed by a capital letter, so version numbers
+  // (e.g. "Spring Boot 3.3", "v1.1.0") stay intact.
+  const descriptionParts = (project ? project.description : '')
+    .split(/(?<=\.)\s+(?=[A-Z])/)
+    .map((s) => s.trim())
+    .filter(Boolean);
 
   // Get GitHub repository link based on project
   const getGitHubLink = (projectTitle) => {
@@ -207,7 +219,7 @@ const ProjectDetail = () => {
         <div className="flex items-center justify-center gap-4 mb-6">
           <a 
             href="/projects" 
-            className="text-slate-400 hover:text-white transition-colors duration-300 flex items-center gap-2"
+            className="text-slate-500 dark:text-slate-400 hover:text-white transition-colors duration-300 flex items-center gap-2"
           >
             ← Back to Projects
           </a>
@@ -217,9 +229,22 @@ const ProjectDetail = () => {
           <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">{project.title}</span>
         </h1>
         
-        <p className="text-slate-300 text-xl max-w-3xl mx-auto leading-relaxed mb-8">
-          {project.description}
-        </p>
+        {/* Description lede — laid out as spaced sentences in an accented panel */}
+        <div className="max-w-3xl mx-auto mb-8 text-left">
+          <div className="relative overflow-hidden bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 rounded-2xl p-6 md:p-8 shadow-lg">
+            <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-blue-400 to-blue-600" />
+            <div className="pl-4 md:pl-5 space-y-4">
+              {descriptionParts.map((part, i) => (
+                <p
+                  key={i}
+                  className="text-slate-700 dark:text-slate-200 text-base md:text-lg leading-relaxed md:leading-8"
+                >
+                  {part}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Project Links */}
         <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -235,20 +260,22 @@ const ProjectDetail = () => {
             </a>
           )}
           
-          {/* GitHub link - dynamically determined based on project */}
-          <a
-            href={getGitHubLink(project.title)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-slate-700/50 hover:bg-slate-600/50 text-white font-medium px-6 py-3 rounded-lg border border-slate-600/50 hover:border-slate-500/50 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
-          >
-            <FaGithub />
-            View Code
-          </a>
+          {/* GitHub link - shown only when a specific project repo exists (not the bare profile URL) */}
+          {getGitHubLink(project.title) !== "https://github.com/pupilliluke" && (
+            <a
+              href={getGitHubLink(project.title)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-slate-100/80 dark:bg-slate-700/50 hover:bg-slate-600/50 text-slate-900 dark:text-white font-medium px-6 py-3 rounded-lg border border-slate-300 dark:border-slate-600/50 hover:border-slate-500/50 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+            >
+              <FaGithub />
+              View Code
+            </a>
+          )}
         </div>
 
         {/* Project Meta */}
-        <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-400">
+        <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500 dark:text-slate-400">
           <div className="flex items-center gap-2">
             <FaCalendarAlt />
             {project.date}
@@ -281,7 +308,7 @@ const ProjectDetail = () => {
               <iframe
                 src={`${project.video}?autoplay=1&mute=1&loop=1&playlist=${project.video.split('/embed/')[1]}&controls=0&showinfo=0&rel=0&modestbranding=1`}
                 title={project.title}
-                className="relative w-full h-[70vh] min-h-[500px] rounded-2xl shadow-xl border border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500"
+                className="relative w-full h-[70vh] min-h-[500px] rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500"
                 frameBorder="0"
                 allow="autoplay; encrypted-media"
                 allowFullScreen
@@ -290,7 +317,7 @@ const ProjectDetail = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className={`relative w-full rounded-2xl shadow-xl border border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500 ${
+                className={`relative w-full rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500 ${
                   project.title.toLowerCase().includes('fusion help')
                     ? "h-auto max-h-[80vh] object-contain bg-slate-900/40"
                     : "h-96 object-cover"
@@ -308,14 +335,14 @@ const ProjectDetail = () => {
           
           {/* Project Overview */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
                 📋
               </div>
               Project Overview
             </h2>
-            <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6">
-              <p className="text-slate-300 leading-relaxed">
+            <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl p-6">
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                 {templateData.overview}
               </p>
             </div>
@@ -323,16 +350,16 @@ const ProjectDetail = () => {
 
           {/* Key Features */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
                 ⭐
               </div>
               Key Features
             </h2>
-            <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6">
+            <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl p-6">
               <ul className="space-y-3">
                 {templateData.keyFeatures.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3 text-slate-300">
+                  <li key={index} className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
                     <div className="w-6 h-6 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
                       {index + 1}
                     </div>
@@ -345,7 +372,7 @@ const ProjectDetail = () => {
 
           {/* Challenges & Solutions */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-600 flex items-center justify-center">
                 🎯
               </div>
@@ -356,7 +383,7 @@ const ProjectDetail = () => {
                 <h3 className="text-lg font-semibold text-red-400 mb-4">Challenges</h3>
                 <ul className="space-y-2">
                   {templateData.challenges.map((challenge, index) => (
-                    <li key={index} className="text-slate-300 text-sm flex items-start gap-2">
+                    <li key={index} className="text-slate-600 dark:text-slate-300 text-sm flex items-start gap-2">
                       <span className="text-red-400 flex-shrink-0">•</span>
                       {challenge}
                     </li>
@@ -367,7 +394,7 @@ const ProjectDetail = () => {
                 <h3 className="text-lg font-semibold text-green-400 mb-4">Solutions</h3>
                 <ul className="space-y-2">
                   {templateData.solutions.map((solution, index) => (
-                    <li key={index} className="text-slate-300 text-sm flex items-start gap-2">
+                    <li key={index} className="text-slate-600 dark:text-slate-300 text-sm flex items-start gap-2">
                       <span className="text-green-400 flex-shrink-0">•</span>
                       {solution}
                     </li>
@@ -379,29 +406,29 @@ const ProjectDetail = () => {
 
           {/* Technical Details */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
                 ⚙️
               </div>
               Technical Implementation
             </h2>
-            <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6">
+            <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl p-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-3">Architecture</h3>
-                  <p className="text-slate-300 text-sm">{templateData.technicalDetails.architecture}</p>
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Architecture</h3>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm">{templateData.technicalDetails.architecture}</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-3">Database</h3>
-                  <p className="text-slate-300 text-sm">{templateData.technicalDetails.database}</p>
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Database</h3>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm">{templateData.technicalDetails.database}</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-3">Deployment</h3>
-                  <p className="text-slate-300 text-sm">{templateData.technicalDetails.deployment}</p>
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Deployment</h3>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm">{templateData.technicalDetails.deployment}</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-3">Testing</h3>
-                  <p className="text-slate-300 text-sm">{templateData.technicalDetails.testing}</p>
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Testing</h3>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm">{templateData.technicalDetails.testing}</p>
                 </div>
               </div>
             </div>
@@ -409,16 +436,16 @@ const ProjectDetail = () => {
 
           {/* Key Learnings */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-600 flex items-center justify-center">
                 🎓
               </div>
               Key Learnings
             </h2>
-            <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6">
+            <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl p-6">
               <ul className="space-y-3">
                 {templateData.learnings.map((learning, index) => (
-                  <li key={index} className="flex items-start gap-3 text-slate-300">
+                  <li key={index} className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
                     <div className="w-6 h-6 rounded-full bg-gradient-to-r from-indigo-500 to-indigo-600 flex items-center justify-center text-white text-xs flex-shrink-0 mt-0.5">
                       💡
                     </div>
@@ -433,13 +460,13 @@ const ProjectDetail = () => {
         {/* Sidebar */}
         <div className="space-y-8">
           {/* Technologies Used */}
-          <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-white mb-4">Technologies Used</h3>
+          <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl p-6">
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Technologies Used</h3>
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 hover:text-white text-xs px-3 py-1.5 rounded-full border border-slate-600/30 hover:border-slate-500/50 transition-all duration-300"
+                  className="bg-slate-100/80 dark:bg-slate-700/50 hover:bg-slate-600/50 text-slate-600 dark:text-slate-300 hover:text-white text-xs px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-600/30 hover:border-slate-500/50 transition-all duration-300"
                 >
                   {tag}
                 </span>
@@ -448,34 +475,34 @@ const ProjectDetail = () => {
           </div>
 
           {/* Project Metrics */}
-          <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-white mb-4">Project Metrics</h3>
+          <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl p-6">
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Project Metrics</h3>
             <div className="space-y-3">
               <div className="flex justify-between">
-                <span className="text-slate-400">Duration:</span>
-                <span className="text-white">{templateData.metrics.duration}</span>
+                <span className="text-slate-500 dark:text-slate-400">Duration:</span>
+                <span className="text-slate-900 dark:text-white">{templateData.metrics.duration}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400">Team Size:</span>
-                <span className="text-white">{templateData.metrics.teamSize}</span>
+                <span className="text-slate-500 dark:text-slate-400">Team Size:</span>
+                <span className="text-slate-900 dark:text-white">{templateData.metrics.teamSize}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400">Lines of Code:</span>
-                <span className="text-white">{templateData.metrics.linesOfCode}</span>
+                <span className="text-slate-500 dark:text-slate-400">Lines of Code:</span>
+                <span className="text-slate-900 dark:text-white">{templateData.metrics.linesOfCode}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400">User Base:</span>
-                <span className="text-white">{templateData.metrics.userBase}</span>
+                <span className="text-slate-500 dark:text-slate-400">User Base:</span>
+                <span className="text-slate-900 dark:text-white">{templateData.metrics.userBase}</span>
               </div>
             </div>
           </div>
 
           {/* Future Improvements */}
-          <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-white mb-4">Future Improvements</h3>
+          <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl p-6">
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Future Improvements</h3>
             <ul className="space-y-2">
               {templateData.futureImprovements.map((improvement, index) => (
-                <li key={index} className="text-slate-300 text-sm flex items-start gap-2">
+                <li key={index} className="text-slate-600 dark:text-slate-300 text-sm flex items-start gap-2">
                   <span className="text-blue-400 flex-shrink-0">•</span>
                   {improvement}
                 </li>
@@ -485,8 +512,8 @@ const ProjectDetail = () => {
 
           {/* Contact CTA */}
           <div className="bg-gradient-to-r from-blue-500/10 to-blue-600/10 border border-blue-500/20 rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-white mb-3">Interested in this project?</h3>
-            <p className="text-slate-300 text-sm mb-4">
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Interested in this project?</h3>
+            <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">
               Let's discuss how I can bring similar solutions to your team.
             </p>
             <a
@@ -500,8 +527,8 @@ const ProjectDetail = () => {
       </div>
 
       {/* Related Projects */}
-      <div className="mt-16 pt-16 border-t border-slate-800/50">
-        <h2 className="text-2xl font-bold text-white mb-8 text-center">
+      <div className="mt-16 pt-16 border-t border-slate-200 dark:border-slate-800/50">
+        <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 text-center">
           <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">More</span> Projects
         </h2>
         <div className="flex justify-center">

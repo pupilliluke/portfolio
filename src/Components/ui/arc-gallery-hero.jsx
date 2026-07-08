@@ -75,7 +75,7 @@ export const ArcGalleryHero = ({
 
   return (
     <section
-      className={`relative overflow-hidden text-white flex flex-col ${
+      className={`relative overflow-hidden text-slate-900 dark:text-white flex flex-col ${
         hasContent ? "min-h-screen" : ""
       } ${className}`}
     >
@@ -95,7 +95,7 @@ export const ArcGalleryHero = ({
 
             const inner = (
               <div
-                className="rounded-2xl shadow-xl overflow-hidden ring-1 ring-slate-700/60 bg-slate-800 w-full h-full transition-transform duration-300"
+                className="rounded-2xl shadow-xl overflow-hidden ring-1 ring-slate-300 dark:ring-slate-700/60 bg-white dark:bg-slate-800 w-full h-full transition-transform duration-300"
                 style={{
                   transform: `rotate(${angle / 4 - 22.5}deg) scale(${
                     isHovered ? 1.15 : 1
@@ -158,7 +158,7 @@ export const ArcGalleryHero = ({
               {title}
             </span>
           </h1>
-          {subtitle && <p className="mt-4 text-lg text-slate-300">{subtitle}</p>}
+          {subtitle && <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">{subtitle}</p>}
           {(primaryLabel || (secondaryLabel && onSecondary)) && (
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               {primaryLabel && (
@@ -172,7 +172,7 @@ export const ArcGalleryHero = ({
               {secondaryLabel && onSecondary && (
                 <button
                   onClick={onSecondary}
-                  className="w-full sm:w-auto px-6 py-3 rounded-full border border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white transition-all duration-200"
+                  className="w-full sm:w-auto px-6 py-3 rounded-full border border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-800 hover:text-white transition-all duration-200"
                 >
                   {secondaryLabel}
                 </button>

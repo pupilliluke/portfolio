@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout from "./Pages/MainLayout";
   import { Toaster } from "react-hot-toast";
+import { ThemeProvider } from "./context/ThemeContext";
 
 // Pages
 import Skills from "./Pages/Skills";
@@ -15,6 +16,7 @@ import ContactPage from "./Pages/Contact";
 
 function App() {
   return (
+    <ThemeProvider>
     <Router>
       <Toaster position="bottom-right" />
       <Routes>
@@ -75,8 +77,9 @@ function App() {
         }
       />
       </Routes>
-        
+
     </Router>
+    </ThemeProvider>
   );
 }
 

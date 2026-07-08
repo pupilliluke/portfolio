@@ -6,12 +6,12 @@ const About = () => {
       <div className="text-center mb-16">
         <h2 className="text-4xl lg:text-5xl font-bold mb-6">
           <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">About</span>{" "}
-          <span className="text-white">Me</span>
+          <span className="text-slate-900 dark:text-white">Me</span>
         </h2>
       </div>
       
-      <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8 shadow-xl">
-        <div className="text-slate-300 text-lg leading-relaxed text-center max-w-4xl mx-auto space-y-6">
+      <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-2xl p-8 shadow-xl">
+        <div className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed text-center max-w-4xl mx-auto space-y-6">
           <p>
             I'm <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-semibold">Luke Pupilli</span>, a full-stack software engineer with 3+ years of experience building scalable web applications and enterprise solutions.
           </p>

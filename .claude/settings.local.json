@@ -47,7 +47,15 @@
       "PowerShell(npm install gsap)",
       "PowerShell($env:CI=\"true\"; npm run build 2>&1 | Select-Object -Last 15)",
       "Bash(node -e \"console.log\\(require\\('./package.json'\\).dependencies['embla-carousel-react'] || 'NOT FOUND'\\)\")",
-      "Bash(npx react-scripts *)"
+      "Bash(npx react-scripts *)",
+      "Bash(git commit *)",
+      "Bash(git restore *)",
+      "Bash(BROWSER=none PORT=3111 npm start)",
+      "Bash(echo \"started, pid $!\")",
+      "Bash(node -e \"try{require.resolve\\('puppeteer'\\);console.log\\('puppeteer-yes'\\)}catch\\(e\\){try{require.resolve\\('puppeteer-core'\\);console.log\\('puppeteer-core-yes'\\)}catch\\(e2\\){console.log\\('no-puppeteer'\\)}}\")",
+      "Bash(kill 7761)",
+      "Bash(pkill -f \"react-scripts start\")",
+      "Bash(pkill -f \"PORT=3111\")"
     ],
     "deny": [],
     "additionalDirectories": [

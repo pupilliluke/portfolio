@@ -12,8 +12,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-slate-900 border-t border-slate-800/50">
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-50"></div>
+    <footer className="relative bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800/50">
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-200 dark:from-slate-950 to-transparent opacity-50"></div>
       
       <div className="relative max-w-6xl mx-auto px-6 py-12">
         <div className="grid md:grid-cols-3 gap-8 items-center">
@@ -22,15 +22,15 @@ const Footer = () => {
             <div className="flex items-center gap-3">
               <img src="/images/favicon-32x32.png" alt="Pacman Logo" className="w-10 h-10" />
               <div>
-                <h3 className="text-white font-bold text-lg">Luke Pupilli</h3>
-                <p className="text-slate-400 text-sm">Full Stack Developer</p>
+                <h3 className="text-slate-900 dark:text-white font-bold text-lg">Luke Pupilli</h3>
+                <p className="text-slate-500 dark:text-slate-400 text-sm">Full Stack Developer</p>
               </div>
             </div>
           </div>
 
           {/* Center: Copyright */}
           <div className="text-center">
-            <p className="text-slate-400 text-sm flex items-center justify-center gap-2">
+            <p className="text-slate-500 dark:text-slate-400 text-sm flex items-center justify-center gap-2">
               Made with 
               <FaHeart className="text-red-500 animate-pulse" />
               by <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-medium">Luke Pupilli</span>
@@ -49,7 +49,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className={`p-3 rounded-xl bg-slate-800/50 text-slate-400 ${color} border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 hover:bg-slate-700/50 hover:scale-110 hover:-translate-y-1`}
+                className={`p-3 rounded-xl bg-white/80 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 ${color} border border-slate-200 dark:border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 hover:bg-slate-700/50 hover:scale-110 hover:-translate-y-1`}
               >
                 <Icon size={18} />
               </a>

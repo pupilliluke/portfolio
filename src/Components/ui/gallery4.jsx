@@ -37,7 +37,7 @@ export const Gallery4 = ({
               </span>
             </h2>
             {description && (
-              <p className="max-w-lg text-slate-300 leading-relaxed">
+              <p className="max-w-lg text-slate-600 dark:text-slate-300 leading-relaxed">
                 {description}
               </p>
             )}
@@ -54,7 +54,7 @@ export const Gallery4 = ({
                 className="min-w-0 shrink-0 grow-0 max-w-[320px] pl-5 lg:max-w-[360px]"
               >
                 <a href={item.href} className="group block rounded-xl">
-                  <div className="relative h-full min-h-[27rem] max-w-full overflow-hidden rounded-xl border border-slate-700/50 md:aspect-[5/4] lg:aspect-[16/9]">
+                  <div className="relative h-full min-h-[27rem] max-w-full overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700/50 md:aspect-[5/4] lg:aspect-[16/9]">
                     <img
                       src={item.image}
                       alt={item.title}

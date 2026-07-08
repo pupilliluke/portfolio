@@ -46,9 +46,9 @@ const Contact = () => {
     <section id="contact" className="max-w-6xl mx-auto px-6 py-20">
       <div className="text-center mb-16">
         <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Let's</span> <span className="text-white">Connect</span>
+          <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Let's</span> <span className="text-slate-900 dark:text-white">Connect</span>
         </h2>
-        <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
           Whether you're interested in working together, have a question, or just want to say hi — 
           <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-medium"> my inbox is always open.</span>
         </p>
@@ -57,14 +57,14 @@ const Contact = () => {
       <div className="grid lg:grid-cols-2 gap-12">
         {/* Left column - Contact Info */}
         <div className="space-y-8">
-          <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8 shadow-xl">
+          <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-2xl p-8 shadow-xl">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center text-2xl shadow-lg">
                 👨‍💻
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">Luke Pupilli</h3>
-                <p className="text-slate-400">Full Stack Developer • Pittsburgh, PA</p>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">Luke Pupilli</h3>
+                <p className="text-slate-500 dark:text-slate-400">Full Stack Developer • Pittsburgh, PA</p>
               </div>
             </div>
 
@@ -74,7 +74,7 @@ const Contact = () => {
                   ✉️
                 </div>
                 <div>
-                  <p className="text-sm text-slate-400 mb-1">Email me at:</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">Email me at:</p>
                   <a
                     href="mailto:pupilli.dev@gmail.com"
                     className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-300"
@@ -89,13 +89,13 @@ const Contact = () => {
                   📍
                 </div>
                 <div>
-                  <p className="text-sm text-slate-400 mb-1">Located in:</p>
-                  <p className="text-white font-medium">Pittsburgh, Pennsylvania</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">Located in:</p>
+                  <p className="text-slate-900 dark:text-white font-medium">Pittsburgh, Pennsylvania</p>
                 </div>
               </div>
             </div>
 
-            <div className="flex gap-4 mt-8 pt-6 border-t border-slate-700/50">
+            <div className="flex gap-4 mt-8 pt-6 border-t border-slate-200 dark:border-slate-700/50">
               {[
                 { icon: FaDiscord, href: "https://discord.com/users/luke_pup", color: "hover:text-indigo-400", bg: "hover:bg-indigo-500/10" },
                 { icon: FaLinkedin, href: "https://www.linkedin.com/in/luke-pupilli-b36a22258/", color: "hover:text-blue-400", bg: "hover:bg-blue-500/10" },
@@ -107,7 +107,7 @@ const Contact = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex-1 flex items-center justify-center p-3 rounded-xl text-slate-300 ${color} ${bg} transition-all duration-300 border border-slate-600/30 hover:border-slate-500/50 hover:scale-105 hover:-translate-y-1`}
+                  className={`flex-1 flex items-center justify-center p-3 rounded-xl text-slate-600 dark:text-slate-300 ${color} ${bg} transition-all duration-300 border border-slate-300 dark:border-slate-600/30 hover:border-slate-500/50 hover:scale-105 hover:-translate-y-1`}
                 >
                   <Icon size={20} />
                 </a>
@@ -118,10 +118,10 @@ const Contact = () => {
 
         {/* Right column - Contact Form */}
         <div>
-          <form ref={formRef} onSubmit={sendEmail} className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8 shadow-xl space-y-6">
+          <form ref={formRef} onSubmit={sendEmail} className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-2xl p-8 shadow-xl space-y-6">
             <div className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-slate-600 dark:text-slate-300 mb-2">
                   Name *
                 </label>
                 <input
@@ -132,12 +132,12 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Your name"
-                  className="bg-slate-800/50 border border-slate-600/50 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 w-full"
+                  className="bg-white/80 dark:bg-slate-800/50 border border-slate-300 dark:border-slate-600/50 rounded-lg px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 w-full"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-slate-600 dark:text-slate-300 mb-2">
                   Email *
                 </label>
                 <input
@@ -148,12 +148,12 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="you@example.com"
-                  className="bg-slate-800/50 border border-slate-600/50 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 w-full"
+                  className="bg-white/80 dark:bg-slate-800/50 border border-slate-300 dark:border-slate-600/50 rounded-lg px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 w-full"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-slate-600 dark:text-slate-300 mb-2">
                   Message *
                 </label>
                 <textarea
@@ -164,7 +164,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder="Let's build something amazing together..."
-                  className="bg-slate-800/50 border border-slate-600/50 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 w-full resize-none"
+                  className="bg-white/80 dark:bg-slate-800/50 border border-slate-300 dark:border-slate-600/50 rounded-lg px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 w-full resize-none"
                 />
               </div>
             </div>
