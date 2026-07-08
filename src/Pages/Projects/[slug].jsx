@@ -282,7 +282,11 @@ const ProjectDetail = () => {
             <img
               src={project.image}
               alt={project.title}
-              className="relative w-full h-96 object-cover rounded-2xl shadow-xl border border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500"
+              className={`relative w-full rounded-2xl shadow-xl border border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500 ${
+                project.title.toLowerCase().includes('fusion help')
+                  ? "h-auto max-h-[80vh] object-contain bg-slate-900/40"
+                  : "h-96 object-cover"
+              }`}
             />
           )}
         </div>

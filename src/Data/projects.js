@@ -52,6 +52,13 @@ const projects = [
         tags: ["TypeScript", "Node.js", "Firebase DB & Hosting", "React"],
         type: "WEBAPP",
         image: "/images/projects/crackingandstacking.png",
+        gallery: [
+            "/images/projects/crackingandstacking.png",
+            "/images/projects/crackingandstacking1.png",
+            "/images/projects/crackingandstacking2.png",
+            "/images/projects/crackingandstacking3.png",
+            "/images/projects/crackingandstacking4.png"
+        ],
         link: "https://crackingandstacking.com"
     },
       {
