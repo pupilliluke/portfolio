@@ -56,7 +56,10 @@ const Home = () => {
       <Hero />
 
       <About />
-      <ProjectsHome />
+      {/* Featured projects carousel — desktop/tablet only */}
+      <div className="hidden md:block">
+        <ProjectsHome />
+      </div>
 
       <Skills />
 
