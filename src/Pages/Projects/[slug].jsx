@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { FaExternalLinkAlt, FaGithub, FaCalendarAlt, FaClock, FaUsers, FaCode } from "react-icons/fa";
 import projects from "../../Data/projects";
+import ProjectGallery from "../../Components/ProjectGallery";
 
 // Import project templates
 import { flashstatsTemplate } from "./flashstats-template";
@@ -265,47 +266,33 @@ const ProjectDetail = () => {
         </div>
       </div>
 
-      {/* Hero Image/Video */}
-      <div className="mb-16">
-        <div className="relative group">
-          <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-blue-400/20 to-blue-500/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-          {project.video && project.title.toLowerCase().includes('collins signatures') ? (
-            <iframe
-              src={`${project.video}?autoplay=1&mute=1&loop=1&playlist=${project.video.split('/embed/')[1]}&controls=0&showinfo=0&rel=0&modestbranding=1`}
-              title={project.title}
-              className="relative w-full h-[70vh] min-h-[500px] rounded-2xl shadow-xl border border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500"
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            ></iframe>
-          ) : (
-            <img
-              src={project.image}
-              alt={project.title}
-              className={`relative w-full rounded-2xl shadow-xl border border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500 ${
-                project.title.toLowerCase().includes('fusion help')
-                  ? "h-auto max-h-[80vh] object-contain bg-slate-900/40"
-                  : "h-96 object-cover"
-              }`}
-            />
-          )}
-        </div>
-      </div>
-
-      {/* Gallery */}
-      {project.gallery && project.gallery.length > 0 && (
+      {/* Hero: full-size slideshow when a multi-image gallery exists, else single image/video */}
+      {project.gallery && project.gallery.length > 1 ? (
+        <ProjectGallery images={project.gallery} title={project.title} />
+      ) : (
         <div className="mb-16">
-          <div className="grid sm:grid-cols-2 gap-6">
-            {project.gallery.map((src, index) => (
-              <div key={index} className="relative group">
-                <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 via-blue-400/10 to-blue-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <img
-                  src={src}
-                  alt={`${project.title} screenshot ${index + 1}`}
-                  className="relative w-full h-64 object-cover rounded-xl shadow-lg border border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500"
-                />
-              </div>
-            ))}
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-blue-400/20 to-blue-500/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+            {project.video && project.title.toLowerCase().includes('collins signatures') ? (
+              <iframe
+                src={`${project.video}?autoplay=1&mute=1&loop=1&playlist=${project.video.split('/embed/')[1]}&controls=0&showinfo=0&rel=0&modestbranding=1`}
+                title={project.title}
+                className="relative w-full h-[70vh] min-h-[500px] rounded-2xl shadow-xl border border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500"
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              ></iframe>
+            ) : (
+              <img
+                src={project.image}
+                alt={project.title}
+                className={`relative w-full rounded-2xl shadow-xl border border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500 ${
+                  project.title.toLowerCase().includes('fusion help')
+                    ? "h-auto max-h-[80vh] object-contain bg-slate-900/40"
+                    : "h-96 object-cover"
+                }`}
+              />
+            )}
           </div>
         </div>
       )}

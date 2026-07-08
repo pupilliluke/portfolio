@@ -15,7 +15,7 @@ const projects = [
         tags: ["C#", "TypeScript", "React", "ASP.NET Core", "PostgreSQL", "Stripe", "Tailwind CSS"],
         type: "WEBAPP",
         image: "/images/projects/pss-portal/dashboard.png",
-        link: "https://www.pssforyou.com"
+        link: "unauthorized"
     },
     {
         title: "MyEHP - Employee Health Benefits Platform",
