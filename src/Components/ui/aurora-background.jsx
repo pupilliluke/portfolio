@@ -31,7 +31,7 @@ function generateBlobs(colors, speed) {
   return [
     {
       color: c(0),
-      size: "60%",
+      size: "85%",
       initialX: "10%",
       initialY: "-20%",
       xKeyframes: ["10%", "50%", "30%", "70%", "10%"],
@@ -41,7 +41,7 @@ function generateBlobs(colors, speed) {
     },
     {
       color: c(1),
-      size: "55%",
+      size: "80%",
       initialX: "60%",
       initialY: "60%",
       xKeyframes: ["60%", "20%", "80%", "40%", "60%"],
@@ -51,7 +51,7 @@ function generateBlobs(colors, speed) {
     },
     {
       color: c(2),
-      size: "50%",
+      size: "72%",
       initialX: "80%",
       initialY: "-10%",
       xKeyframes: ["80%", "30%", "60%", "10%", "80%"],
@@ -61,7 +61,7 @@ function generateBlobs(colors, speed) {
     },
     {
       color: c(3),
-      size: "45%",
+      size: "68%",
       initialX: "30%",
       initialY: "70%",
       xKeyframes: ["30%", "70%", "10%", "50%", "30%"],
@@ -71,7 +71,7 @@ function generateBlobs(colors, speed) {
     },
     {
       color: c(4),
-      size: "65%",
+      size: "90%",
       initialX: "50%",
       initialY: "30%",
       xKeyframes: ["50%", "10%", "70%", "30%", "50%"],
