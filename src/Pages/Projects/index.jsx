@@ -42,7 +42,7 @@ const ProjectsPage = () => {
         primaryLabel={null}
       />
 
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 pb-20 -mt-24 relative z-10">
       <div className="text-center mb-16">
         <h1 className="text-4xl lg:text-5xl font-bold mb-6">
           <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">All</span> <span className="text-white">Projects</span>

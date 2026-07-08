@@ -21,7 +21,7 @@ export const ArcGalleryHero = ({
   items,
   images,
   title = "My Work, at a Glance",
-  subtitle = "A visual tour through the projects I've designed, built, and shipped.",
+  subtitle = "A tour through the projects I've designed, built, and shipped.",
   primaryLabel = "Explore Projects",
   onPrimary,
   secondaryLabel,

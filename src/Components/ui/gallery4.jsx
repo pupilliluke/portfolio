@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -19,30 +19,12 @@ export const Gallery4 = ({
   description = "",
   items = [],
 }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
+  const [emblaRef] = useEmblaCarousel({
     align: "start",
     breakpoints: {
       "(max-width: 768px)": { dragFree: true },
     },
   });
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const onSelect = useCallback((api) => {
-    if (!api) return;
-    setCurrentSlide(api.selectedScrollSnap());
-  }, []);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect(emblaApi);
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-    return () => {
-      emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
-    };
-  }, [emblaApi, onSelect]);
 
   return (
     <section className="py-8">
@@ -98,19 +80,6 @@ export const Gallery4 = ({
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="mt-8 flex justify-center gap-2">
-          {items.map((_, index) => (
-            <button
-              key={index}
-              className={`h-2 w-2 rounded-full transition-colors ${
-                currentSlide === index ? "bg-blue-500" : "bg-blue-500/20"
-              }`}
-              onClick={() => emblaApi?.scrollTo(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
         </div>
       </div>
     </section>

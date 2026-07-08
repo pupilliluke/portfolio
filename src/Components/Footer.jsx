@@ -20,9 +20,7 @@ const Footer = () => {
           {/* Left: Brand */}
           <div className="flex flex-col items-center md:items-start space-y-2">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">LP</span>
-              </div>
+              <img src="/images/favicon-32x32.png" alt="Pacman Logo" className="w-10 h-10" />
               <div>
                 <h3 className="text-white font-bold text-lg">Luke Pupilli</h3>
                 <p className="text-slate-400 text-sm">Full Stack Developer</p>
@@ -59,20 +57,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom divider with tech stack */}
-        <div className="mt-8 pt-6 border-t border-slate-800/50">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500 text-xs">
-            <div className="flex items-center gap-4">
-              <span>Built with React & Tailwind CSS</span>
-              <div className="hidden sm:block w-px h-4 bg-slate-700"></div>
-              <span>Animated with Framer Motion</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <span>Deployed on</span>
-              <span className="text-blue-400 font-medium">Vercel</span>
-            </div>
-          </div>
-        </div>
       </div>
       
       {/* Subtle animated dots */}

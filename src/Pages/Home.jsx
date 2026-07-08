@@ -58,16 +58,17 @@ const Home = () => {
       <About />
       <ProjectsHome />
 
+      <Skills />
+
       {/* Arc gallery of projects, underneath the featured projects carousel */}
       <ArcGalleryHero
         items={arcCards}
         title="Projects & Portfolio"
-        subtitle="A visual tour through the applications, platforms, and tools I've designed, built, and shipped. Click any card to dive in."
+        subtitle="A tour through the applications, platforms, and tools I've designed, built, and shipped. Click any card to dive in."
         primaryLabel="View All Projects"
         onPrimary={() => navigate("/projects")}
       />
 
-      <Skills />
       <Contact />
     </>
   );

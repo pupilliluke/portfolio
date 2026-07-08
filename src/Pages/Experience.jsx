@@ -41,7 +41,7 @@ const ExperienceToggle = ({ active, onChange }) => {
   return (
     <div className="flex justify-center mb-12">
       {/* Border: 1px top/sides, 3px bottom; border-slate-500 is a lighter shade than the slate-700 toggle */}
-      <div className="inline-flex w-full max-w-xl rounded-2xl border border-b-[3px] border-slate-500 bg-slate-700 p-1 overflow-hidden">
+      <div className="inline-flex rounded-xl border border-b-[3px] border-slate-500 bg-slate-700 p-0.5 overflow-hidden">
         {tabs.map((tab) => {
           const isActive = active === tab.key;
           return (
@@ -49,7 +49,7 @@ const ExperienceToggle = ({ active, onChange }) => {
               key={tab.key}
               type="button"
               onClick={() => onChange(tab.key)}
-              className={`flex-1 rounded-xl px-8 py-4 text-lg font-semibold transition-colors duration-300 ${
+              className={`rounded-lg px-4 py-1.5 text-sm font-semibold transition-colors duration-300 ${
                 isActive
                   ? "bg-slate-900 text-white shadow-inner"
                   : "text-slate-300 hover:text-white"
