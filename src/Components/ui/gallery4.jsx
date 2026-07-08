@@ -103,16 +103,18 @@ export const Gallery4 = ({
                       className="absolute h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 h-full bg-gradient-to-b from-slate-900/0 via-slate-900/50 to-slate-900/95" />
-                    <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-6 text-white md:p-8">
-                      <div className="mb-2 pt-4 text-xl font-semibold">
-                        {item.title}
-                      </div>
-                      <div className="mb-8 line-clamp-2 text-sm text-slate-300 md:mb-9">
-                        {item.description}
-                      </div>
-                      <div className="flex items-center text-sm font-medium">
-                        Read more
-                        <FiArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
+                      <div className="flex flex-col items-start rounded-xl bg-slate-950/70 p-5 text-white backdrop-blur-md ring-1 ring-white/10 md:p-6">
+                        <div className="mb-2 text-xl font-semibold">
+                          {item.title}
+                        </div>
+                        <div className="mb-6 line-clamp-2 text-sm text-slate-200 md:mb-7">
+                          {item.description}
+                        </div>
+                        <div className="flex items-center text-sm font-medium">
+                          Read more
+                          <FiArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                        </div>
                       </div>
                     </div>
                   </div>

@@ -29,6 +29,15 @@ const featuredProjects = [
     type: "WEBAPP",
     image: "/images/projects/rlbl.png",
   },
+  {
+    slug: "flash-stats---baseball-scouting-research-platform",
+    title: "Flash Stats - Baseball Scouting Research Platform",
+    date: "January 2025",
+    description: "B2B scouting research platform serving active MLB clientele. Led the SDLC on a client/server REST API and public-facing site delivering critical scouting data to professional baseball teams.",
+    tags: ["Python", "JavaScript", "React", "SQL", "REST API"],
+    type: "WEB",
+    image: "/images/projects/fs.png",
+  },
 ];
 
 // Map the featured-project data onto the Gallery4 item shape.

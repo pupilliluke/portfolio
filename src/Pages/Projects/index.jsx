@@ -1,12 +1,21 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import projects from "../../Data/projects.js";
 import ArcGalleryHero from "../../Components/ui/arc-gallery-hero.jsx";
 
-// Pull a representative image from each project for the arc gallery intro.
-const heroImages = projects
-  .map((p) => p.image)
-  .filter(Boolean)
+// Known-missing image files to keep out of the arc gallery.
+const MISSING_IMAGES = new Set(["/images/projects/collins-signatures-thumbnail.png"]);
+
+// Clickable arc cards, each linking to its project's slug page.
+const arcCards = projects
+  .filter((p) => p.image && !MISSING_IMAGES.has(p.image))
+  .map((p) => ({
+    image: p.image,
+    title: p.title,
+    href: `/projects/${p.title
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]/g, "")}`,
+  }))
   .slice(0, 12);
 
 const getTypeColor = (type) => {
@@ -22,28 +31,17 @@ const getTypeColor = (type) => {
 };
 
 const ProjectsPage = () => {
-  const navigate = useNavigate();
-
-  const scrollToGrid = () => {
-    document
-      .getElementById("projects-grid")
-      ?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <>
-      {/* Arc gallery intro splash */}
+      {/* Arc gallery of project cards (no text/buttons) */}
       <ArcGalleryHero
-        images={heroImages}
-        title="Projects & Portfolio"
-        subtitle="A visual tour through the applications, platforms, and tools I've designed, built, and shipped."
-        primaryLabel="Explore Projects"
-        onPrimary={scrollToGrid}
-        secondaryLabel="Get in Touch"
-        onSecondary={() => navigate("/contact")}
+        items={arcCards}
+        title={null}
+        subtitle={null}
+        primaryLabel={null}
       />
 
-      <div id="projects-grid" className="max-w-7xl mx-auto px-6 py-20 scroll-mt-20">
+      <div className="max-w-7xl mx-auto px-6 py-20">
       <div className="text-center mb-16">
         <h1 className="text-4xl lg:text-5xl font-bold mb-6">
           <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">All</span> <span className="text-white">Projects</span>

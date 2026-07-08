@@ -2,27 +2,29 @@ import React, { useEffect, useState } from "react";
 
 /**
  * ArcGalleryHero
- * Fans an array of images out along a circular arc, then reveals a headline
- * and call-to-action buttons below. Adapted to plain JSX (CRA) and the site's
- * dark slate theme.
+ * Fans a set of cards out along a circular arc, then reveals a headline and
+ * call-to-action button below. Plain JSX (CRA) styled for the dark slate theme.
  *
- * Props:
- *  - images: string[]                 (required)
- *  - title, subtitle: node            headline + supporting copy
- *  - primaryLabel / onPrimary         main CTA button
- *  - secondaryLabel / onSecondary     secondary CTA button
- *  - startAngle / endAngle            arc sweep in degrees
- *  - radiusLg/Md/Sm                   arc radius per breakpoint
- *  - cardSizeLg/Md/Sm                 card size per breakpoint
- *  - className                        extra classes on the outer section
+ * Cards can be supplied two ways:
+ *  - items:  [{ image, href, title }]   preferred — each card links to `href`
+ *  - images: string[]                   simple fallback (no links)
+ *
+ * Other props:
+ *  - title, subtitle
+ *  - primaryLabel / onPrimary           main CTA (rendered only if label set)
+ *  - secondaryLabel / onSecondary       secondary CTA (rendered only if both set)
+ *  - startAngle / endAngle              arc sweep in degrees
+ *  - radiusLg/Md/Sm, cardSizeLg/Md/Sm   geometry per breakpoint
+ *  - className                          extra classes on the outer section
  */
 export const ArcGalleryHero = ({
+  items,
   images,
   title = "My Work, at a Glance",
   subtitle = "A visual tour through the projects I've designed, built, and shipped.",
   primaryLabel = "Explore Projects",
   onPrimary,
-  secondaryLabel = "Get in Touch",
+  secondaryLabel,
   onSecondary,
   startAngle = 20,
   endAngle = 160,
@@ -38,6 +40,7 @@ export const ArcGalleryHero = ({
     radius: radiusLg,
     cardSize: cardSizeLg,
   });
+  const [hovered, setHovered] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -56,12 +59,25 @@ export const ArcGalleryHero = ({
     return () => window.removeEventListener("resize", handleResize);
   }, [radiusLg, radiusMd, radiusSm, cardSizeLg, cardSizeMd, cardSizeSm]);
 
-  const count = Math.max(images.length, 2);
+  // Normalize inputs to a common card shape.
+  const cards = (items && items.length
+    ? items
+    : (images || []).map((src) => ({ image: src }))
+  ).filter((c) => c && c.image);
+
+  const count = Math.max(cards.length, 2);
   const step = (endAngle - startAngle) / (count - 1);
+
+  // Only render the headline / CTA block when there's something to show.
+  const hasContent = Boolean(
+    title || subtitle || primaryLabel || (secondaryLabel && onSecondary)
+  );
 
   return (
     <section
-      className={`relative overflow-hidden text-white min-h-screen flex flex-col ${className}`}
+      className={`relative overflow-hidden text-white flex flex-col ${
+        hasContent ? "min-h-screen" : ""
+      } ${className}`}
     >
       {/* Arc geometry container */}
       <div
@@ -70,42 +86,60 @@ export const ArcGalleryHero = ({
       >
         {/* Bottom-center pivot */}
         <div className="absolute left-1/2 bottom-0 -translate-x-1/2">
-          {images.map((src, i) => {
+          {cards.map((card, i) => {
             const angle = startAngle + step * i;
             const angleRad = (angle * Math.PI) / 180;
             const x = Math.cos(angleRad) * dimensions.radius;
             const y = Math.sin(angleRad) * dimensions.radius;
+            const isHovered = hovered === i;
 
-            return (
+            const inner = (
               <div
-                key={i}
-                className="absolute opacity-0 animate-arc-fade-in-up"
+                className="rounded-2xl shadow-xl overflow-hidden ring-1 ring-slate-700/60 bg-slate-800 w-full h-full transition-transform duration-300"
                 style={{
-                  width: dimensions.cardSize,
-                  height: dimensions.cardSize,
-                  left: `calc(50% + ${x}px)`,
-                  bottom: `${y}px`,
-                  transform: "translate(-50%, 50%)",
-                  animationDelay: `${i * 90}ms`,
-                  animationFillMode: "forwards",
-                  zIndex: count - i,
+                  transform: `rotate(${angle / 4 - 22.5}deg) scale(${
+                    isHovered ? 1.15 : 1
+                  })`,
                 }}
               >
-                <div
-                  className="rounded-2xl shadow-xl overflow-hidden ring-1 ring-slate-700/60 bg-slate-800 transition-transform duration-300 hover:scale-110 hover:ring-blue-500/60 w-full h-full"
-                  style={{ transform: `rotate(${angle / 4 - 22.5}deg)` }}
-                >
-                  <img
-                    src={src}
-                    alt={`Project ${i + 1}`}
-                    className="block w-full h-full object-cover"
-                    draggable={false}
-                    onError={(e) => {
-                      e.target.src =
-                        "https://placehold.co/400x400/1e293b/94a3b8?text=Project";
-                    }}
-                  />
-                </div>
+                <img
+                  src={card.image}
+                  alt={card.title || `Project ${i + 1}`}
+                  className="block w-full h-full object-cover"
+                  draggable={false}
+                  onError={(e) => {
+                    e.target.src =
+                      "https://placehold.co/400x400/1e293b/94a3b8?text=Project";
+                  }}
+                />
+              </div>
+            );
+
+            const commonProps = {
+              onMouseEnter: () => setHovered(i),
+              onMouseLeave: () => setHovered((h) => (h === i ? null : h)),
+              className:
+                "absolute opacity-0 animate-arc-fade-in-up cursor-pointer",
+              style: {
+                width: dimensions.cardSize,
+                height: dimensions.cardSize,
+                left: `calc(50% + ${x}px)`,
+                bottom: `${y}px`,
+                transform: "translate(-50%, 50%)",
+                animationDelay: `${i * 90}ms`,
+                animationFillMode: "forwards",
+                // Hovered card jumps above its overlapping neighbors.
+                zIndex: isHovered ? 999 : count - i,
+              },
+            };
+
+            return card.href ? (
+              <a key={i} href={card.href} title={card.title} {...commonProps}>
+                {inner}
+              </a>
+            ) : (
+              <div key={i} {...commonProps}>
+                {inner}
               </div>
             );
           })}
@@ -113,6 +147,7 @@ export const ArcGalleryHero = ({
       </div>
 
       {/* Headline + CTA below the arc */}
+      {hasContent && (
       <div className="relative z-10 flex-1 flex items-center justify-center px-6 -mt-40 md:-mt-52 lg:-mt-64">
         <div
           className="text-center max-w-2xl px-6 opacity-0 animate-arc-fade-in"
@@ -123,23 +158,30 @@ export const ArcGalleryHero = ({
               {title}
             </span>
           </h1>
-          <p className="mt-4 text-lg text-slate-300">{subtitle}</p>
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={onPrimary}
-              className="w-full sm:w-auto px-6 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-            >
-              {primaryLabel}
-            </button>
-            <button
-              onClick={onSecondary}
-              className="w-full sm:w-auto px-6 py-3 rounded-full border border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white transition-all duration-200"
-            >
-              {secondaryLabel}
-            </button>
-          </div>
+          {subtitle && <p className="mt-4 text-lg text-slate-300">{subtitle}</p>}
+          {(primaryLabel || (secondaryLabel && onSecondary)) && (
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              {primaryLabel && (
+                <button
+                  onClick={onPrimary}
+                  className="w-full sm:w-auto px-6 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                >
+                  {primaryLabel}
+                </button>
+              )}
+              {secondaryLabel && onSecondary && (
+                <button
+                  onClick={onSecondary}
+                  className="w-full sm:w-auto px-6 py-3 rounded-full border border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white transition-all duration-200"
+                >
+                  {secondaryLabel}
+                </button>
+              )}
+            </div>
+          )}
         </div>
       </div>
+      )}
 
       <style>{`
         @keyframes arc-fade-in-up {
