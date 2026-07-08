@@ -43,7 +43,9 @@
       "Bash(npx eslint *)",
       "Bash(node -e \"const m=require\\('@paper-design/shaders-react'\\); console.log\\('SmokeRing:', typeof m.SmokeRing\\); console.log\\('smokeRingPresets:', Array.isArray\\(m.smokeRingPresets\\), m.smokeRingPresets && m.smokeRingPresets.map\\(p=>p.name\\)\\);\")",
       "PowerShell($env:CI=\"true\"; npm run build 2>&1 | Select-Object -Last 30)",
-      "PowerShell($env:CI=\"true\"; npm run build 2>&1 | Select-Object -Last 20)"
+      "PowerShell($env:CI=\"true\"; npm run build 2>&1 | Select-Object -Last 20)",
+      "PowerShell(npm install gsap)",
+      "PowerShell($env:CI=\"true\"; npm run build 2>&1 | Select-Object -Last 15)"
     ],
     "deny": [],
     "additionalDirectories": [

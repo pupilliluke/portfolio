@@ -75,12 +75,12 @@ export const nonTechnicalExperiences = [
   },
   {
     company: "Volunteer Basketball Coach",
-    position: "9th Grade Head Coach",
+    position: "9th Grade Volunteer Coach",
     location: "Pittsburgh, PA",
     startDate: "2025",
     endDate: "2026",
     description:
-      "Volunteer head coach for a 9th grade basketball team, leading practices, player development, and game-day strategy. Guided the team to a 9-4 record for the season.",
+      "Volunteer coach for a 9th grade basketball team, leading practices, player development, and game-day strategy. Guided the team to a 9-4 record for the season.",
   },
 ];
 

@@ -1,36 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Hero from "../Components/Hero";
 import About from "../Components/About";
 import Skills from "../Components/Skills";
 import ProjectsHome from "../Components/ProjectsPrev";
 import Contact from "../Components/Contact";
-import { ContainerScroll } from "../Components/ContainerScroll";
+import EntryScreen from "../Components/EntryScreen";
 
 const Home = () => {
+  // Show the spiral entry splash once per browser session (first site load).
+  const [showEntry, setShowEntry] = useState(
+    () => sessionStorage.getItem("hasEnteredSite") !== "true"
+  );
+
+  // Lock page scroll while the entry overlay is visible.
+  useEffect(() => {
+    if (showEntry) {
+      const previous = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = previous;
+      };
+    }
+  }, [showEntry]);
+
+  const handleEnter = () => {
+    sessionStorage.setItem("hasEnteredSite", "true");
+    setShowEntry(false);
+  };
+
   return (
     <>
+      {showEntry && <EntryScreen onEnter={handleEnter} />}
       <Hero />
-      <div className="flex flex-col overflow-hidden">
-        <ContainerScroll
-          titleComponent={
-            <>
-              <h2 className="text-4xl font-semibold text-white">
-                Turning ideas into <br />
-                <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                  Shipped Products
-                </span>
-              </h2>
-            </>
-          }
-        >
-          <img
-            src="/images/projects/crackingandstacking.png"
-            alt="Featured project preview"
-            className="mx-auto rounded-2xl object-cover h-full w-full object-left-top"
-            draggable={false}
-          />
-        </ContainerScroll>
-      </div>
       <About />
       <ProjectsHome />
       <Skills />
