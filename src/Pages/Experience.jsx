@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import experiences, { nonTechnicalExperiences } from "../Data/experiences.js";
 import { motion } from "framer-motion";
 import ShaderBackground from "../Components/ui/shader-background-1";
+import useIsMobile from "../hooks/useIsMobile";
 
 const ExperienceCard = ({ exp }) => (
   <div className="bg-white dark:bg-[#1e293b] border border-slate-200 dark:border-transparent p-6 rounded-lg shadow-md transition hover:shadow-lg">
@@ -67,16 +68,20 @@ const ExperienceToggle = ({ active, onChange }) => {
 const Experience = () => {
   const [activeTab, setActiveTab] = useState("technical");
   const list = activeTab === "technical" ? experiences : nonTechnicalExperiences;
+  const isMobile = useIsMobile();
 
   return (
     <div className="relative overflow-hidden">
-      {/* Ambient shader background (moved from the home page hero) */}
+      {/* Ambient shader background (moved from the home page hero).
+          Skip the WebGL shader on mobile — it can crash phone browsers. */}
       <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
-        <ShaderBackground
-          className="h-full w-full opacity-60"
-          speed={0.6}
-          mouseEnable={false}
-        />
+        {!isMobile && (
+          <ShaderBackground
+            className="h-full w-full opacity-60"
+            speed={0.6}
+            mouseEnable={false}
+          />
+        )}
         {/* Fade the shader so foreground text stays readable */}
         <div className="absolute inset-0 bg-slate-50/70 dark:bg-slate-900/70" />
       </div>

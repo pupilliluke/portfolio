@@ -4,6 +4,7 @@ import Footer from "../Components/Footer";
 import ScrollProgress from "../Components/ScrollProgress";
 import AuroraBackground from "../Components/ui/aurora-background";
 import { useTheme } from "../context/ThemeContext";
+import useIsMobile from "../hooks/useIsMobile";
 
 // Aurora blob palettes, tuned per theme so the background stays subtle.
 const DARK_AURORA = [
@@ -24,17 +25,24 @@ const LIGHT_AURORA = [
 
 const MainLayout = ({ children }) => {
   const { theme } = useTheme();
+  const isMobile = useIsMobile();
 
   return (
     <div className="relative min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-white transition-colors duration-300">
-      {/* Global aurora background — fixed behind every page, part of the page itself */}
+      {/* Global background — fixed behind every page, part of the page itself.
+          Phones get a cheap static gradient; the animated blurred aurora is
+          too heavy for mobile Safari and can freeze/crash it. */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <AuroraBackground
-          className="relative h-full w-full"
-          colors={theme === "dark" ? DARK_AURORA : LIGHT_AURORA}
-          speed={0.8}
-          blur={100}
-        />
+        {isMobile ? (
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-slate-50 to-indigo-100 dark:from-slate-950 dark:via-slate-900 dark:to-blue-950" />
+        ) : (
+          <AuroraBackground
+            className="relative h-full w-full"
+            colors={theme === "dark" ? DARK_AURORA : LIGHT_AURORA}
+            speed={0.8}
+            blur={100}
+          />
+        )}
       </div>
 
       <div className="relative z-10">

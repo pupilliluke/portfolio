@@ -8,6 +8,7 @@ import Contact from "../Components/Contact";
 import EntryScreen from "../Components/EntryScreen";
 import ArcGalleryHero from "../Components/ui/arc-gallery-hero";
 import projects from "../Data/projects.js";
+import useIsMobile from "../hooks/useIsMobile";
 
 // Known-missing image files to keep out of the arc gallery.
 const MISSING_IMAGES = new Set(["/images/projects/collins-signatures-thumbnail.png"]);
@@ -26,21 +27,25 @@ const arcCards = projects
   .slice(0, 12);
 
 const Home = () => {
+  const isMobile = useIsMobile();
+
   // Show the spiral entry splash once per browser session (first site load).
+  // Skip it on mobile — the 5000-star canvas can freeze/crash phone browsers.
   const [showEntry, setShowEntry] = useState(
     () => sessionStorage.getItem("hasEnteredSite") !== "true"
   );
+  const entryVisible = showEntry && !isMobile;
 
   // Lock page scroll while the entry overlay is visible.
   useEffect(() => {
-    if (showEntry) {
+    if (entryVisible) {
       const previous = document.body.style.overflow;
       document.body.style.overflow = "hidden";
       return () => {
         document.body.style.overflow = previous;
       };
     }
-  }, [showEntry]);
+  }, [entryVisible]);
 
   const navigate = useNavigate();
 
@@ -51,7 +56,7 @@ const Home = () => {
 
   return (
     <>
-      {showEntry && <EntryScreen onEnter={handleEnter} />}
+      {entryVisible && <EntryScreen onEnter={handleEnter} />}
 
       <Hero />
 
