@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import experiences, { nonTechnicalExperiences } from "../Data/experiences.js";
 import { motion } from "framer-motion";
-import SmokeRing from "../Components/ui/smoke-ring.js";
+import ShaderBackground from "../Components/ui/shader-background-1";
 
 const ExperienceCard = ({ exp }) => (
   <div className="bg-[#1e293b] p-6 rounded-lg shadow-md transition hover:shadow-lg">
@@ -70,17 +70,12 @@ const Experience = () => {
 
   return (
     <div className="relative overflow-hidden">
-      {/* Ambient SmokeRing shader background */}
+      {/* Ambient shader background (moved from the home page hero) */}
       <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
-        <SmokeRing
-          colorBack="#0f172a"
-          colors={["#fbcf33", "#f87171", "#4285f4"]}
+        <ShaderBackground
+          className="h-full w-full opacity-60"
           speed={0.6}
-          scale={1.4}
-          radius={0.5}
-          thickness={0.35}
-          noiseScale={1.6}
-          style={{ width: "100%", height: "100%" }}
+          mouseEnable={false}
         />
         {/* Fade the shader so foreground text stays readable */}
         <div className="absolute inset-0 bg-slate-900/70" />

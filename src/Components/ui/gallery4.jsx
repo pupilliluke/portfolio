@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 
 /**
  * Gallery4 — a horizontally-scrolling carousel of cards.
@@ -26,14 +26,10 @@ export const Gallery4 = ({
     },
   });
 
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const onSelect = useCallback((api) => {
     if (!api) return;
-    setCanScrollPrev(api.canScrollPrev());
-    setCanScrollNext(api.canScrollNext());
     setCurrentSlide(api.selectedScrollSnap());
   }, []);
 
@@ -63,26 +59,6 @@ export const Gallery4 = ({
                 {description}
               </p>
             )}
-          </div>
-          <div className="hidden shrink-0 gap-2 md:flex">
-            <button
-              type="button"
-              onClick={() => emblaApi?.scrollPrev()}
-              disabled={!canScrollPrev}
-              aria-label="Previous slide"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700/50 bg-slate-800/50 text-white transition-colors hover:bg-slate-700/50 disabled:opacity-40 disabled:hover:bg-slate-800/50"
-            >
-              <FiArrowLeft className="h-5 w-5" />
-            </button>
-            <button
-              type="button"
-              onClick={() => emblaApi?.scrollNext()}
-              disabled={!canScrollNext}
-              aria-label="Next slide"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700/50 bg-slate-800/50 text-white transition-colors hover:bg-slate-700/50 disabled:opacity-40 disabled:hover:bg-slate-800/50"
-            >
-              <FiArrowRight className="h-5 w-5" />
-            </button>
           </div>
         </div>
       </div>

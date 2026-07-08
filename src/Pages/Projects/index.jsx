@@ -35,6 +35,7 @@ const ProjectsPage = () => {
     <>
       {/* Arc gallery of project cards (no text/buttons) */}
       <ArcGalleryHero
+        className="pt-32 md:pt-44 lg:pt-52"
         items={arcCards}
         title={null}
         subtitle={null}

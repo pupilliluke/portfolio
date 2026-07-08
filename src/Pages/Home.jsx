@@ -6,7 +6,6 @@ import Skills from "../Components/Skills";
 import ProjectsHome from "../Components/ProjectsPrev";
 import Contact from "../Components/Contact";
 import EntryScreen from "../Components/EntryScreen";
-import ShaderBackground from "../Components/ui/shader-background-1";
 import ArcGalleryHero from "../Components/ui/arc-gallery-hero";
 import projects from "../Data/projects.js";
 
@@ -54,21 +53,7 @@ const Home = () => {
     <>
       {showEntry && <EntryScreen onEnter={handleEnter} />}
 
-      {/* Animated shader background sitting behind the hero at the top of the page */}
-      <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-          <ShaderBackground
-            className="h-full w-full opacity-60"
-            speed={0.6}
-            mouseEnable={false}
-          />
-          {/* Fade the shader into the page background so hero text stays readable */}
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-900/30 to-slate-900" />
-        </div>
-        <div className="relative z-10">
-          <Hero />
-        </div>
-      </div>
+      <Hero />
 
       <About />
       <ProjectsHome />

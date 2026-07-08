@@ -54,21 +54,9 @@ const Projects = () => {
     <section id="projects" className="py-20">
       <Gallery4
         title="Featured Projects"
-        description="A few of the projects I've built — showcasing my skills in web development, problem-solving, and creative thinking. Drag or use the arrows to browse."
+        description="A few of the projects I've built — showcasing my skills in web development, problem-solving, and creative thinking. Drag to browse."
         items={galleryItems}
       />
-
-      <div className="mt-8 flex justify-center">
-        <a
-          href="/projects"
-          className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium px-8 py-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 text-lg"
-        >
-          <span className="flex items-center gap-2">
-            View All Projects
-            <span>→</span>
-          </span>
-        </a>
-      </div>
     </section>
   );
 };
