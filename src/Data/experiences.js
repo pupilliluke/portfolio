@@ -63,4 +63,25 @@ const experiences = [
   },
 ];
 
+export const nonTechnicalExperiences = [
+  {
+    company: "Phantom Fireworks",
+    position: "Warehouse Manager",
+    location: "Pittsburgh, PA",
+    startDate: "2025",
+    endDate: "2026",
+    description:
+      "Managed warehouse operations including inventory control, stock organization, order fulfillment, and team coordination to ensure efficient day-to-day logistics.",
+  },
+  {
+    company: "Volunteer Basketball Coach",
+    position: "9th Grade Head Coach",
+    location: "Pittsburgh, PA",
+    startDate: "2025",
+    endDate: "2026",
+    description:
+      "Volunteer head coach for a 9th grade basketball team, leading practices, player development, and game-day strategy. Guided the team to a 9-4 record for the season.",
+  },
+];
+
 export default experiences;
