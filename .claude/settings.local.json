@@ -17,8 +17,26 @@
       "Bash(npx --yes playwright screenshot:*)",
       "Bash(npx playwright install chromium)",
       "Bash(powershell -Command:*)",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "Bash(del:*)",
+      "Bash(ren:*)",
+      "Bash(dir:*)",
+      "Bash(cmd /c \"cd /d c:\\\\Users\\\\lukel\\\\SideProjects\\\\pupilli-portfolio-main\\\\public\\\\images\\\\projects\\\\pss-portal && del dashboard.png && del landingpage.png && del signin.png && ren dashboard_cropped.png dashboard.png && ren landingpage_cropped.png landingpage.png && ren signin_cropped.png signin.png && dir\")",
+      "Bash(gh repo view:*)",
+      "Bash(gh api:*)",
+      "Bash(git add:*)",
+      "Bash(node -e \"import\\('./src/Data/projects.js'\\).then\\(m=>console.log\\('projects OK, count=',m.default.length, '| first=',m.default[0].title\\)\\); import\\('./src/Pages/Projects/fusion-helpdesk-template.js'\\).then\\(m=>console.log\\('template OK, keys=',Object.keys\\(m.FusionHelpDeskTemplate\\).join\\(','\\)\\)\\)\")",
+      "Bash(cp src/Data/projects.js /tmp/p.mjs)",
+      "Bash(cp src/Pages/Projects/fusion-helpdesk-template.js /tmp/t.mjs)",
+      "Bash(node -e \"import\\('/tmp/p.mjs'\\).then\\(m=>console.log\\('projects OK, count=',m.default.length,'| first=',m.default[0].title\\)\\); import\\('/tmp/t.mjs'\\).then\\(m=>console.log\\('template OK, keys=',Object.keys\\(m.FusionHelpDeskTemplate\\).length\\)\\)\")",
+      "Bash(node --input-type=module -e 'import\\('\\\\''file:///C:/Users/lukel/AppData/Local/Temp/claude/c--Users-lukel-SideProjects-pupilli-portfolio-main/604331d0-ba2b-4c6c-8b4f-4184d7238dde/scratchpad/p.mjs'\\\\''\\).then\\(m=>console.log\\('\\\\''projects OK, count='\\\\'',m.default.length,'\\\\''| first='\\\\'',m.default[0].title\\)\\).catch\\(e=>console.log\\('\\\\''P ERR'\\\\'',e.message\\)\\); import\\('\\\\''file:///C:/Users/lukel/AppData/Local/Temp/claude/c--Users-lukel-SideProjects-pupilli-portfolio-main/604331d0-ba2b-4c6c-8b4f-4184d7238dde/scratchpad/t.mjs'\\\\''\\).then\\(m=>console.log\\('\\\\''template OK, keys='\\\\'',Object.keys\\(m.FusionHelpDeskTemplate\\).length,'\\\\''| features='\\\\'',m.FusionHelpDeskTemplate.keyFeatures.length\\)\\).catch\\(e=>console.log\\('\\\\''T ERR'\\\\'',e.message\\)\\)')",
+      "Skill(artifact-design)",
+      "Skill(artifact-design:*)",
+      "Bash(git add *)"
     ],
-    "deny": []
+    "deny": [],
+    "additionalDirectories": [
+      "\\tmp"
+    ]
   }
 }

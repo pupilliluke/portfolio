@@ -1,5 +1,14 @@
 const projects = [
     {
+        title: "Fusion Help Desk Ticketing Application",
+        date: "Sept 2024 – April 2026",
+        description: "Enterprise-grade internal IT support platform (FHDTA v1.1.0) built with Java 21 and Spring Boot 3.3, secured behind Microsoft Azure AD (Entra ID) OAuth2/OpenID Connect single sign-on. Delivers role-based employee and admin dashboards, full ticket lifecycle management (Open → Working → Closed → Reopen), IDOR-proof object-level authorization, and an Apache POI reporting engine that generates multi-sheet Excel workbooks. Deployed on Azure App Service with Azure SQL and Application Insights telemetry. Shipped by a 12-person team over 19 months (358 commits) with JUnit 5 / Mockito tests, JaCoCo coverage, and SonarQube quality gates.",
+        tags: ["Java 21", "Spring Boot 3", "Spring Security", "Azure AD / OAuth2", "Azure SQL", "Hibernate / JPA", "Apache POI", "JSP", "JUnit 5", "SonarQube"],
+        type: "WEBAPP",
+        image: "/images/projects/HelpDeskImage.jpg",
+        link: "unauthorized"
+    },
+    {
         title: "PSS Portal - Enterprise Lead Generation CRM",
         date: "2026",
         description: "Multi-tenant CRM platform with lead management, Google Sheets import, and Stripe pay-per-service billing. Features JWT authentication with refresh tokens, activity logging, file attachments, and a React 19 frontend with Vite and Tailwind CSS 4. Backend built with ASP.NET Core 8 and PostgreSQL deployed on Render.",
@@ -28,15 +37,6 @@ const projects = [
         link: "https://www.FlashStats.net"
     },
     {
-        title: "IT Help Desk Ticketing Platform",
-        date: "2025",
-        description: "Built secure, automated IT ticketing system in Spring Boot to replace current system, reducing request handling time by 50% and improved internal employee accountability, visibility, and workflow efficiency. Real-time status updates, role-based access control, company-only access through Microsoft authentication, exportable excel reports, complex ticket filtering, SonarQube Testing, and spring security.",
-        tags: ["Java", "Spring Boot", "SQL", "Azure", "Maven", "Spring Security"],
-        type: "WEBAPP",
-        image: "/images/projects/fusionSpring.png",
-        link: "unauthorized"
-    },
-    {
         title: "PLNTD SIPS",
         date: "August 1, 2025",
         description: "Front-end platform for a client's small business. Features product listings, instagram integration, and responsive design. ",
@@ -56,7 +56,7 @@ const projects = [
     },
       {
         title: "Oliver Projections Website",
-        date: "Current",
+        date: "In Development",
         description: "An encyclopedia for statistics and portal for expert analysis and projections covering all leagues and ages in the baseball world. Created to serve 1000's of users, clients, and subscribers with real-time data and insights. The site will feature advanced search capabilities with RESTful API connected to a robust database of baseball players in every league and age group.",
         tags: ["Javascript", "Python", "SQL", "React", "HTML", "CSS", "AWS", ],
         type: "WEBAPP",
@@ -80,6 +80,12 @@ const projects = [
         tags: ["React", "Node.js", "Vercel Hosting", "Firebase DB", "Tailwind CSS"],
         type: "WEBAPP",
         image: "/images/projects/rlbl.png",
+        gallery: [
+            "/images/projects/rlbl.png",
+            "/images/projects/rlbl2.png",
+            "/images/projects/rlbl3.png",
+            "/images/projects/rlbl4.png"
+        ],
         link: "https://rlbl-website.vercel.app/"
     },
     {

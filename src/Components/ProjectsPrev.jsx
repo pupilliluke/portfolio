@@ -2,8 +2,17 @@ import React from "react";
 
 const featuredProjects = [
   {
+    slug: "fusion-help-desk-ticketing-application",
+    title: "Fusion Help Desk Ticketing Application",
+    date: "Sept 2024 – April 2026",
+    description: "Enterprise-grade internal IT support platform (Spring Boot + Azure) with Microsoft SSO, role-based dashboards, full ticket lifecycle management, and automated Excel reporting — built and shipped by a 12-person team over 19 months.",
+    tags: ["Java 21", "Spring Boot 3", "Spring Security", "Azure AD / OAuth2", "Azure SQL", "Apache POI"],
+    type: "WEBAPP",
+    image: "/images/projects/HelpDeskImage.jpg",
+  },
+  {
     slug: "collins-signatures",
-    title: "Collins Signatures", 
+    title: "Collins Signatures",
     date: "1 day",
     description: "Interactive 3D baseball signature design studio with real-time customization and visualization. Features Three.js 3D rendering, texture and video export capabilities.",
     tags: ["React", "Three.js", "Tailwind CSS", "Firebase", "Vite", "Zustand"],
@@ -14,20 +23,11 @@ const featuredProjects = [
   {
     slug: "flash-stats-website",
     title: "Flash Stats Website",
-    date: "December 4, 2024", 
+    date: "December 4, 2024",
     description: "A browser extension designed to assist users in solving LeetCode problems by providing real-time information and tools.",
     tags: ["React", "Typescript", "Tailwind", "Vercel", "Node.js"],
     type: "WEB",
     image: "/images/projects/fs.png",
-  },
-  {
-    slug: "fusion-help-desk-ticketing-system",
-    title: "Fusion Help Desk Ticketing System",
-    date: "October 15, 2024",
-    description: "A comprehensive ticketing system for managing customer support requests, integrating with various communication channels.",
-    tags: ["Spring Boot", "Java", "Python", "Azure DB & Hosting", "HTML", "CSS"],
-    type: "WEBAPP", 
-    image: "/images/projects/HelpDeskImage.jpg",
   },
 ];
 

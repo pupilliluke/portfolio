@@ -284,6 +284,24 @@ const ProjectDetail = () => {
         </div>
       </div>
 
+      {/* Gallery */}
+      {project.gallery && project.gallery.length > 0 && (
+        <div className="mb-16">
+          <div className="grid sm:grid-cols-2 gap-6">
+            {project.gallery.map((src, index) => (
+              <div key={index} className="relative group">
+                <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/10 via-blue-400/10 to-blue-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <img
+                  src={src}
+                  alt={`${project.title} screenshot ${index + 1}`}
+                  className="relative w-full h-64 object-cover rounded-xl shadow-lg border border-slate-700/50 group-hover:shadow-blue-500/20 transition-all duration-500"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Content Grid */}
       <div className="grid lg:grid-cols-3 gap-12">
         {/* Main Content */}
