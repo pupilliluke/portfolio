@@ -10,8 +10,8 @@ const Home = () => {
     <>
       <Hero />
       <About />
-      <Skills />
       <ProjectsHome />
+      <Skills />
       <Contact />
     </>
   );
