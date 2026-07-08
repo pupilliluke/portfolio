@@ -1,5 +1,5 @@
 import React from "react";
-import { FaDiscord, FaGithub, FaInstagram, FaLinkedin, FaHeart } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -30,12 +30,7 @@ const Footer = () => {
 
           {/* Center: Copyright */}
           <div className="text-center">
-            <p className="text-slate-500 dark:text-slate-400 text-sm flex items-center justify-center gap-2">
-              Made with 
-              <FaHeart className="text-red-500 animate-pulse" />
-              by <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-medium">Luke Pupilli</span>
-            </p>
-            <p className="text-slate-500 text-xs mt-1">
+            <p className="text-slate-500 text-xs">
               © {currentYear} All rights reserved.
             </p>
           </div>
