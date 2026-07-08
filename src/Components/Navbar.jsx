@@ -38,6 +38,7 @@ const Navbar = () => {
   );
 
   return (
+    <>
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
       isScrolled
         ? 'bg-white/90 border-b border-slate-200 dark:bg-slate-800/90 dark:border-slate-700/50 shadow-xl backdrop-blur-md'
@@ -109,9 +110,12 @@ const Navbar = () => {
           <ThemeToggle className="ml-1 w-7 h-7" />
         </div>
       </nav>
+    </header>
 
-      {/* Mobile Menu Overlay */}
-      <div className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+      {/* Mobile Menu Overlay — kept OUTSIDE <header> so the header's
+          backdrop-blur doesn't become the containing block for this fixed
+          overlay (which would clip it to the header when scrolled). */}
+      <div className={`md:hidden fixed inset-0 z-[60] transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
         <div 
           className="absolute inset-0 bg-black/50 backdrop-blur-sm"
           onClick={() => setIsMobileMenuOpen(false)}
@@ -187,7 +191,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 };
 
