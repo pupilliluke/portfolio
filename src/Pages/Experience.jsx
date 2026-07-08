@@ -1,6 +1,7 @@
 import React from "react";
 import experiences, { nonTechnicalExperiences } from "../Data/experiences.js";
 import { motion } from "framer-motion";
+import SmokeRing from "../Components/ui/smoke-ring.js";
 
 const ExperienceCard = ({ exp }) => (
   <div className="bg-[#1e293b] p-6 rounded-lg shadow-md transition hover:shadow-lg">
@@ -33,33 +34,51 @@ const ExperienceCard = ({ exp }) => (
 
 const Experience = () => {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      id="experience"
-      className="max-w-6xl mx-auto px-6 py-20"
-    >
-      <h2 className="text-3xl font-bold text-white mb-6">Experience</h2>
-      <div className="space-y-8">
-        {experiences.map((exp, index) => (
-          <ExperienceCard key={index} exp={exp} />
-        ))}
+    <div className="relative overflow-hidden">
+      {/* Ambient SmokeRing shader background */}
+      <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+        <SmokeRing
+          colorBack="#0f172a"
+          colors={["#fbcf33", "#f87171", "#4285f4"]}
+          speed={0.6}
+          scale={1.4}
+          radius={0.5}
+          thickness={0.35}
+          noiseScale={1.6}
+          style={{ width: "100%", height: "100%" }}
+        />
+        {/* Fade the shader so foreground text stays readable */}
+        <div className="absolute inset-0 bg-slate-900/70" />
       </div>
 
-      {nonTechnicalExperiences.length > 0 && (
-        <>
-          <h2 className="text-3xl font-bold text-white mt-16 mb-6">
-            Non-Technical Experience
-          </h2>
-          <div className="space-y-8">
-            {nonTechnicalExperiences.map((exp, index) => (
-              <ExperienceCard key={index} exp={exp} />
-            ))}
-          </div>
-        </>
-      )}
-    </motion.section>
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        id="experience"
+        className="relative max-w-6xl mx-auto px-6 py-20"
+      >
+        <h2 className="text-3xl font-bold text-white mb-6">Experience</h2>
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <ExperienceCard key={index} exp={exp} />
+          ))}
+        </div>
+
+        {nonTechnicalExperiences.length > 0 && (
+          <>
+            <h2 className="text-3xl font-bold text-white mt-16 mb-6">
+              Non-Technical Experience
+            </h2>
+            <div className="space-y-8">
+              {nonTechnicalExperiences.map((exp, index) => (
+                <ExperienceCard key={index} exp={exp} />
+              ))}
+            </div>
+          </>
+        )}
+      </motion.section>
+    </div>
   );
 };
 

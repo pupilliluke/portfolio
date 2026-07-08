@@ -13,7 +13,7 @@ const featuredProjects = [
   {
     slug: "warehouse-inventory-management-system",
     title: "Warehouse Inventory Management System",
-    date: "July 1, 2025",
+    date: "June 2025 & 2026",
     description: "Real-time inventory management system with automated stock tracking. Built on a lightweight cloud architecture with Firebase integration, currently serving 50+ users.",
     tags: ["TypeScript", "Node.js", "Firebase DB & Hosting", "React"],
     type: "WEBAPP",
@@ -22,7 +22,7 @@ const featuredProjects = [
   {
     slug: "rocket-league-beer-league-site",
     title: "Rocket League Beer League Site",
-    date: "July 7, 2025",
+    date: "2025-2026",
     description: "Community gaming league platform with an admin dashboard, tournament management, and real-time leaderboards. Features responsive design and dynamic content updates.",
     tags: ["React", "Node.js", "Vercel Hosting", "Firebase DB", "Tailwind CSS"],
     type: "WEBAPP",

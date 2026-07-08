@@ -1,8 +1,8 @@
 import React from "react";
 
 const Hero = () => {
-  // Calculate years of experience dynamically (started in 2022)
-  const yearsOfExperience = new Date().getFullYear() - 2022;
+  // Calculate years of experience dynamically (started in 2023)
+  const yearsOfExperience = new Date().getFullYear() - 2023;
 
   return (
     <section className="flex flex-col-reverse lg:flex-row items-center justify-between max-w-6xl mx-auto p-6 pt-24">

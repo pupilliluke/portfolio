@@ -18,6 +18,7 @@ import { FusionHelpDeskTemplate } from './fusion-helpdesk-template';
 import { OliverProjectionsTemplate } from './oliver-projections-template';
 import { myehpTemplate } from './myehp-template';
 import { pssPortalTemplate } from './pss-portal-template';
+import { fullStackUserTemplate } from './full-stack-user-template';
 
 const ProjectDetail = () => {
   const { slug } = useParams();
@@ -59,6 +60,9 @@ const ProjectDetail = () => {
 
     if (titleLower.includes('pss portal')) {
       return pssPortalTemplate;
+    }
+    if (titleLower.includes('full stack user management')) {
+      return fullStackUserTemplate;
     }
     if (titleLower.includes('myehp')) {
       return myehpTemplate;
